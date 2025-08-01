@@ -6,7 +6,7 @@ function home() {
                title:'Blog',
                discription:'I developed a dynamic blog website, designed to provide a seamless platform for publishing engaging content and offering an intuitive reading experience for users.',
                links:'https://separatedigital.netlify.app/Blog',
-               repo:'https://github.com/Abhay7111/spotify',
+               repo:'',
                tech:[
                     "React js",
                     "HTML",
