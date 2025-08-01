@@ -144,7 +144,7 @@ function home() {
           },
           {
                title:'Linkedin',
-               link:'',
+               link:'https://www.linkedin.com/in/abhay-vishwakarma-a72005259/',
                icon:'ri-linkedin-line',
           },
           {
