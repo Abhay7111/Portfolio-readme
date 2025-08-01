@@ -16,6 +16,9 @@ function home() {
                     "Express js",
                     ],
                date:'Jul 16, 2024',
+               fullstack:true,
+               backend:true,
+               frontend:true,
           },
           {
                title:'Spotify Clone',
@@ -28,6 +31,9 @@ function home() {
                     "CSS",
                     ],
                date:'Dec 1, 2023',
+               fullstack:false,
+               backend:false,
+               frontend:true,
           },
           {
                title:'biz-growth',
@@ -40,6 +46,9 @@ function home() {
                     "CSS",
                     ],
                date:'Mar 24, 2024',
+               fullstack:false,
+               backend:false,
+               frontend:true,
           },
           {
                title:'Minefood',
@@ -53,6 +62,9 @@ function home() {
                     "Remix icon",
                     ],
                date:'Nov 13, 2024',
+               fullstack:true,
+               backend:true,
+               frontend:true,
           },
           {
                title:'Github clone',
@@ -66,6 +78,9 @@ function home() {
                     "Remix icon",
                     ],
                date:'Mar 12, 2024',
+               fullstack:false,
+               backend:false,
+               frontend:true,
           },
      ]
      const toolslogo = [
@@ -149,6 +164,8 @@ function home() {
           },
           
      ]
+
+     const [infoopen, setinfoopen] = useState(null);
      const [adddatalength, setadddatalength] = useState(4);
      const loopdata = data.slice(0, + adddatalength);
   return (
@@ -169,15 +186,29 @@ function home() {
                     </span>
                </div>
                {/* 2nd */}
-                    <h1 className='text-2xl font-semibold uppercase mb-3'>Projects</h1>
+                    <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'>Projects <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
+                         {infoopen && <div className='w-fit h-fit z-50 p-3 rounded-lg bg-white border border-zinc-200 absolute right-0 top-full mt-1'>
+                                   <span className='flex items-center justify-start gap-2'>
+                                        <p className='text-sm font-light lowercase'>true</p>
+                                        <div className='size-2 bg-green-400 rounded-full'></div>
+                                        <p className='text-sm font-light lowercase'>false</p>
+                                        <div className='size-2 bg-red-400 rounded-full'></div>
+                                   </span>
+                                   <div className='flex flex-col items-start gap-1 lowercase text-sm font-light mt-2'>
+                                        <p className='text-nowrap'>1. frontend</p>
+                                        <p className='text-nowrap'>2. backend</p>
+                                        <p className='text-nowrap'>3. full-stack</p>
+                                   </div>
+                              </div>}
+                    </span></h1>
                {loopdata.map((items, index) => (
                     <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
                          <div className='flex items-center justify-between'>
-                              <h1 className='text-xl font-medium'>{items.title}</h1>
+                              <h1 className='text-xl font-medium flex items-center gap-2'>{items.title} <span className='flex items-center gap-1'><p className={`${items.frontend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p><p className={`${items.backend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p><p className={`${items.fullstack ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p></span></h1>
                               <span className='flex items-center gap-3 pr-5'>{items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>Repo <i class="ri-git-repository-line"></i></a>}{items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i class="ri-arrow-right-up-box-line"></i></a>}</span>
                          </div>
                          <p className='line-clamp-2 text-sm opacity-75'>{items.discription}</p>
-                         <span className='flex items-center gap-3 opacity-85 font-medium font- text-sm'>{items.tech.map((items) => (<span>{items}</span>))}</span>
+                         <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm'>{items.tech.map((items) => (<span>{items}</span>))}</span>
                          <span className='text-xs'>{items.date}</span>
                     </div>
                ))}
