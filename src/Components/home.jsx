@@ -1,68 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function home() {
      const data = [
+          {
+               title:'Blog',
+               discription:'I developed a dynamic blog website, designed to provide a seamless platform for publishing engaging content and offering an intuitive reading experience for users.',
+               links:'https://separatedigital.netlify.app/Blog',
+               repo:'https://github.com/Abhay7111/spotify',
+               tech:[
+                    "React js",
+                    "HTML",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    "Node js",
+                    "Express js",
+                    ],
+               date:'Jul 16, 2024',
+          },
           {
                title:'Spotify Clone',
                discription:'A Spotify clone built with HTML, CSS, and JavaScript. It allows users to play music. The project showcases a responsive design and includes features and its looks similar to the original Spotify website in terms of layout and functionality.',
                links:'https://abhay7111.github.io/spotify/',
                repo:'https://github.com/Abhay7111/spotify',
                tech:[
-                    "Java script",
+                    "JavaScript",
                     "HTML 5",
                     "CSS",
-                    ]
+                    ],
+               date:'Dec 1, 2023',
           },
-          // {
-          //      title:'Managements',
-          //      discription:'London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.',
-          //      links:'https://www.github.com/Abhay7111',
-          //      tech:[
-          //           "React.js",
-          //           "HTML 5",
-          //           "Java script"
-          //           ]
-          // },
-          // {
-          //      title:'Task manajor',
-          //      discription:'London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.',
-          //      links:'https://www.github.com/Abhay7111',
-          //      tech:[
-          //           "React.js",
-          //           "Java script",
-          //           "HTML 5",
-          //           ]
-          // },
-          // {
-          //      title:'Managements',
-          //      discription:'London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.',
-          //      links:'https://www.github.com/Abhay7111',
-          //      tech:[
-          //           "React.js",
-          //           "HTML 5",
-          //           "Java script"
-          //           ]
-          // },
-          // {
-          //      title:'Task manajor',
-          //      discription:'London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.',
-          //      links:'https://www.github.com/Abhay7111',
-          //      tech:[
-          //           "React.js",
-          //           "Java script",
-          //           "HTML 5",
-          //           ]
-          // },
-          // {
-          //      title:'Managements',
-          //      discription:'London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.',
-          //      links:'https://www.github.com/Abhay7111',
-          //      tech:[
-          //           "React.js",
-          //           "HTML 5",
-          //           "Java script"
-          //           ]
-          // },
+          {
+               title:'biz-growth',
+               discription:'I developed the official website for Prachar Expert, a digital growth accelerator specializing in SEO, SMM, and content mastery. The site is designed to effectively showcase their services, empowering them to help clients achieve a strong online presence.',
+               links:'https://biz-growth.netlify.app/',
+               repo:'https://github.com/Abhay7111/gonukkad',
+               tech:[
+                    "JavaScript",
+                    "HTML 5",
+                    "CSS",
+                    ],
+               date:'Mar 24, 2024',
+          },
+          {
+               title:'Minefood',
+               discription:'I designed and developed this comprehensive website for Minefood. The platform showcases their unique menu and inviting ambiance, enhancing their online presence and connecting them with a wider audience.',
+               links:'https://minefood.netlify.app/',
+               repo:'',
+               tech:[
+                    "React js",
+                    "HTML",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    ],
+               date:'Nov 13, 2024',
+          },
+          {
+               title:'Github clone',
+               discription:'I built the user interface and experience for this GitHub clone, meticulously replicating its design and interactive elements. This project showcases my skills in creating responsive, component-driven web applications that provide an intuitive user experience.',
+               links:'https://abhay7111github.netlify.app/',
+               repo:'',
+               tech:[
+                    "React js",
+                    "HTML",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    ],
+               date:'Mar 12, 2024',
+          },
      ]
      const toolslogo = [
           {
@@ -106,40 +110,82 @@ function home() {
                discription:'Seprate Digital is a dynamic digital marketing agency dedicated to helping businesses thrive in the online world. We specialize in creating tailored digital marketing strategies that drive results, from SEO and social media management to content creation and PPC advertising. Our team of experts is committed to delivering innovative solutions that enhance brand visibility and engagement.',
           },
      ]
+
+     const plinks = [
+          {
+               title:'Github',
+               link:'https://github.com/Abhay7111',
+               icon:'ri-github-line',
+          },
+          {
+               title:'facebook',
+               link:'',
+               icon:'ri-facebook-fill',
+          },
+          {
+               title:'instagram',
+               link:'',
+               icon:'ri-instagram-line',
+          },
+          {
+               title:'Linkedin',
+               link:'',
+               icon:'ri-linkedin-line',
+          },
+          {
+               title:'Twitter',
+               link:'',
+               icon:'ri-twitter-line',
+          },
+          {
+               title:'Youtube',
+               link:'https://www.youtube.com/@gaamagaming8682',
+               icon:'ri-youtube-line',
+          },
+          {
+               title:'Whatsapp',
+               link:'https://wa.me/+917408638739',
+               icon:'ri-whatsapp-line',
+          },
+          
+     ]
+     const [adddatalength, setadddatalength] = useState(4);
+     const loopdata = data.slice(0, + adddatalength);
   return (
     <div className='w-dvw h-dvh bg-white p-2 flex items-start justify-center'>
-     <div className='w-[50%] h-full bg-zinc-50 overflow-auto'>
+     <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 overflow-auto transition-all duration-300'>
           <div className=' flex flex-col gap-2 p-2'>
                {/* card 1st */}
-               <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4'>
-                    <h1 className='text-2xl font-medium'>Hy, I'm Abhay7111</h1>
-                    <p className='text-sm opacity-75'>London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.</p>
-                    <span className='w-fit flex items-start justify-start gap-2 ml-3'>
-                         <a href={`https://www.github.com/Abhay7111`} target='_blank' className='size-8 rounded-md transition-all duration-300 hover:border-zinc-400 text-xl hover:text-shadow-zinc-600 text-shadow-md flex items-center justify-center'><i className='ri-github-line'></i></a>
-                         <a href={``} target='_blank' className='size-8 rounded-md transition-all duration-300 hover:border-zinc-400 text-xl hover:text-shadow-blue-600 text-shadow-md flex items-center justify-center'><i className='ri-twitter-x-line'></i></a>
-                         <a href={``} target='_blank' className='size-8 rounded-md transition-all duration-300 hover:border-zinc-400 text-xl hover:text-shadow-red-600 text-shadow-md flex items-center justify-center'><i className='ri-youtube-line'></i></a>
-                         <a href={``} target='_blank' className='size-8 rounded-md transition-all duration-300 hover:border-zinc-400 text-xl hover:text-shadow-pink-600 text-shadow-md flex items-center justify-center'><i className='ri-instagram-line'></i></a>
-                         <a href={``} target='_blank' className='size-8 rounded-md transition-all duration-300 hover:border-zinc-400 text-xl hover:text-shadow-green-600 text-shadow-md flex items-center justify-center'><i className='ri-whatsapp-line'></i></a>
-                         <a href={`mailto:gaamagaming@gmail.com`} target='_blank' className='size-8 rounded-md transition-all duration-300 hover:border-zinc-400 text-xl hover:text-shadow-red-500 text-shadow-md flex items-center justify-center'><i className='ri-mail-line'></i></a>
+               <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
+                    <h1 className='text-2xl font-medium'>Hy, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
+                    <p className='text-sm opacity-75 text-center md:text-start'>London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.</p>
+                    <span className='w-fit flex items-start justify-start'>
+                         {plinks.map((items) => (
+                              <span>
+                                   {items.link && <a href={items.link} target='_blank' className='text-xl px-2.5 font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'><i className={items.icon}></i></a>}
+                              </span>
+                         ))}
+                         
                     </span>
                </div>
                {/* 2nd */}
-                    <h1 className='text-2xl font-medium mb-3'>Projects</h1>
-               {data.slice(0,3).map((items, index) => (
+                    <h1 className='text-2xl font-semibold uppercase mb-3'>Projects</h1>
+               {loopdata.map((items, index) => (
                     <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
                          <div className='flex items-center justify-between'>
                               <h1 className='text-xl font-medium'>{items.title}</h1>
-                              <span className='flex items-center gap-3 pr-5'><a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>Repo <i class="ri-git-repository-line"></i></a><a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i class="ri-arrow-right-up-box-line"></i></a></span>
+                              <span className='flex items-center gap-3 pr-5'>{items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>Repo <i class="ri-git-repository-line"></i></a>}{items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i class="ri-arrow-right-up-box-line"></i></a>}</span>
                          </div>
                          <p className='line-clamp-2 text-sm opacity-75'>{items.discription}</p>
-                         <span className='flex items-center gap-3 opacity-70 font- text-sm'>{items.tech.map((items) => (<span>{items} /</span>))}</span>
+                         <span className='flex items-center gap-3 opacity-85 font-medium font- text-sm'>{items.tech.map((items) => (<span>{items}</span>))}</span>
+                         <span className='text-xs'>{items.date}</span>
                     </div>
                ))}
                <div className='w-full h-fit flex items-center justify-center'>
-                    <p className='text-sm font-medium py-3'>Show More Experience <i className='ri-arrow-drop-down-line'></i></p>
+                    <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-200 hover:border-zinc-300 active:scale-[0.97] transition-all'>Show More Experience <i className='ri-arrow-drop-down-line'></i></button>
                </div>
                <div className='w-full h-fit'>
-                    <h1 className='text-xl font-medium p-2'>All Tools</h1>
+                    <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
                     <div className='w-full h-fit flex items-center justify-center gap-3 flex-wrap'>
                          {toolslogo.map((items) => (
                               <div className='flex flex-col items-center justify-center gap-2'>
@@ -150,8 +196,8 @@ function home() {
                     </div>
                </div>
                <div className='w-full h-fit mb-2'>
-                    <h1 className='text-xl font-medium p-2'>My clints</h1>
-                    <div className='w-full h-fit grid grid-cols-3 items-center justify-center gap-3 flex-wrap'>
+                    <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My clints</h1>
+                    <div className='w-full h-fit grid md:grid-cols-3 grid-cols-2 items-center justify-center gap-3 flex-wrap'>
                          {Clints.map((items, index) => (
                               <div className='w-full h-fit bg-zinc-200 rounded-md border border-zinc-300'>
                                    <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
