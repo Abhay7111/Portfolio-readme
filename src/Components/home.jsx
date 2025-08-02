@@ -175,7 +175,7 @@ function home() {
                {/* card 1st */}
                <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
                     <h1 className='text-2xl font-medium'>Hy, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
-                    <p className='text-sm opacity-75 text-center md:text-start'>London-based full-stack developer passionate about crafting exceptional digital experiences. I transform complex challenges into elegant, user-centric solutions.</p>
+                    <p className='text-sm opacity-75 text-center md:text-start'>My portfolio demonstrates my expertise in fullstack web development, where I seamlessly blend captivating UI/UX design with powerful backend functionality to create dynamic and user-centric digital experiences.</p>
                     <span className='w-fit flex items-start justify-start'>
                          {plinks.map((items) => (
                               <span>
