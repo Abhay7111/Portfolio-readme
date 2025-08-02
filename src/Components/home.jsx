@@ -112,15 +112,15 @@ function home() {
      const Clints = [
           {
                compname:'Ledtvexpert',
-               websitename:'ledtvexpert.in',
-               websitelink:'https://www.ledtvexpert.in',
+               websitename:'ledtvexpert',
+               websitelink:'https://ledtvexpert.netlify.app/',
                happy:true,
                discription:'LedTVExpert is a leading online platform specializing in LED TV sales and services. We offer a wide range of high-quality LED TVs from top brands, ensuring the best viewing experience for our customers. Our expert team provides reliable installation and repair services, making us a trusted choice for all your LED TV needs.',
           },
           {
                compname:'Seprate digital',
-               websitename:'sepratedigital.com',
-               websitelink:'https://www.sepratedigital.com',
+               websitename:'sepratedigital',
+               websitelink:'https://separatedigital.netlify.app/',
                happy:true,
                discription:'Seprate Digital is a dynamic digital marketing agency dedicated to helping businesses thrive in the online world. We specialize in creating tailored digital marketing strategies that drive results, from SEO and social media management to content creation and PPC advertising. Our team of experts is committed to delivering innovative solutions that enhance brand visibility and engagement.',
           },
