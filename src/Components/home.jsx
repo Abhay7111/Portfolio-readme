@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toggleTheme } from '../theme'
 
 function home() {
      const data = [
@@ -225,16 +226,22 @@ function home() {
      ]
 
      const [infoopen, setinfoopen] = useState(null);
-     const [adddatalength, setadddatalength] = useState(4);
+     const [adddatalength, setadddatalength] = useState(6);
      const loopdata = data.slice(0, + adddatalength);
   return (
-    <div className='w-dvw h-dvh bg-white p-2 flex items-start justify-center'>
-     <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 overflow-auto transition-all duration-300'>
+    <div className='w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300'>
+     <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300'>
           <div className=' flex flex-col gap-2 p-2'>
                {/* card 1st */}
                <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
-                    <h1 className='text-3xl font-semibold'>Hy, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
-                    <p className='text-sm opacity-75 text-center md:text-start'>My portfolio demonstrates my expertise in fullstack web development, where I seamlessly blend captivating UI/UX design with powerful backend functionality to create dynamic and user-centric digital experiences.</p>
+                    <div className='w-full flex items-center justify-between gap-2'>
+                         <h1 className='text-3xl font-semibold'>Hy, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
+                         <button onClick={toggleTheme} className='text-sm cursor-pointer font-medium size-8 rounded-md transition-colors'>
+                              <span className='hidden dark:inline'><i className='ri-sun-line text-xl'></i></span>
+                              <span className='inline dark:hidden'><i className='ri-moon-line text-xl'></i></span>
+                         </button>
+                    </div>
+                    <p className='text-sm opacity-75 text-center md:text-start'>My portfolio highlights my expertise in full-stack web development, where I combine engaging UI/UX design with strong Node.js backend APIs to deliver dynamic, user-focused digital experiences.</p>
                     <span className='w-fit flex items-start justify-start lg:'>
                          {plinks.map((items) => (
                               <span>
@@ -246,7 +253,7 @@ function home() {
                </div>
                {/* 2nd */}
                     <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'>Projects <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
-                         {infoopen && <div className='w-fit h-fit z-50 p-3 rounded-lg bg-white border border-zinc-200 absolute right-0 top-full mt-1'>
+                         {infoopen && <div className='w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
                                    <span className='flex items-center justify-start gap-2'>
                                         <p className='text-sm font-light lowercase'>true</p>
                                         <div className='size-2 bg-green-400 rounded-full'></div>
@@ -282,14 +289,14 @@ function home() {
                     </div>
                ))}
                <div className='w-full h-fit flex items-center justify-center'>
-                    <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-200 hover:border-zinc-300 active:scale-[0.97] transition-all'>Show More Experience <i className='ri-arrow-drop-down-line'></i></button>
+                    <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>Show More Experience <i className='ri-arrow-drop-down-line'></i></button>
                </div>
                <div className='w-full h-fit'>
                     <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
-                    <div className='w-full h-fit flex items-center justify-center gap-3 flex-wrap'>
+                    <div className='w-full h-fit grid grid-cols-10 items-center justify-center gap-2'>
                          {toolslogo.map((items) => (
                               <div className='flex flex-col items-center justify-center gap-2'>
-                                   <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover' />
+                                   <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover bg-zinc-50 p-1' />
                                    <p className='text-sm'>{items.name}</p>
                               </div>
                          ))}
@@ -299,14 +306,14 @@ function home() {
                     <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My clints</h1>
                     <div className='w-full h-fit grid md:grid-cols-3 grid-cols-2 items-center justify-center gap-3 flex-wrap'>
                          {Clints.map((items, index) => (
-                              <div className='w-full h-fit bg-zinc-200 rounded-md border border-zinc-300'>
+                              <div className='w-full h-fit bg-zinc-200 dark:bg-zinc-700 rounded-md border border-zinc-300 dark:border-zinc-600'>
                                    <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
                                         <h1 className='text-lg font-medium'>{items.compname}</h1>
                                         <span className='flex items-center justify-start gap-2'>
                                              <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.websitename} <i class="ri-arrow-right-up-box-line text-xs"></i></a>
                                         </span>
                                         <p className='line-clamp-2 text-sm font-mono opacity-70'>{items.discription}</p>
-                                        {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-600"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-600"></i></span>}
+                                        {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
                                    </div>
                               </div>
                          ))}
