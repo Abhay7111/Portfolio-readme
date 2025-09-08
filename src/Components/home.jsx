@@ -4,21 +4,18 @@ import { toggleTheme } from '../theme'
 function home() {
      const data = [
           {
-               title:'Assistant',
-               discription:'I built a smart chat and voice assistant that fetches real-time data from a database, answers user queries, and integrates seamlessly with web applications',
-               links:'https://abhay7111-voice-assistant.netlify.app/',
-               repo:'https://github.com/Abhay7111/Portfolio-readme',
+               title:'Prasa',
+               discription:'I created a jewellery website with a clean, elegant design that beautifully showcases collections. The site is fully responsive, user-friendly, and highlights the brand’s identity while providing smooth navigation and a professional online presence.',
+               links:'https://prasa-ruddy.vercel.app/',
+               repo:'https://github.com/Abhay7111/prasa',
                tech:[
                     "React js",
                     "Tailwind CSS",
                     "Remix icon",
-                    "Node js",
-                    "Express js",
-                    "Mongo DB",
                     ],
                date:'Aug 27, 2025',
-               fullstack:true,
-               backend:true,
+               fullstack:false,
+               backend:false,
                frontend:true,
           },
           {
@@ -283,7 +280,7 @@ function home() {
                                    {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
                               </span>
                          </div>
-                         <p className='line-clamp-2 text-sm opacity-75'>{items.discription}</p>
+                         <p className='line-clamp- text-sm opacity-75'>{items.discription}</p>
                          <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
                          <span className='text-xs'>{items.date}</span>
                     </div>
@@ -291,9 +288,26 @@ function home() {
                <div className='w-full h-fit flex items-center justify-center'>
                     <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>Show More Experience <i className='ri-arrow-drop-down-line'></i></button>
                </div>
+               <div className='w-full h-fit mb-2'>
+                    <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1>
+                    <div className='w-full h-fit grid md:grid-cols-3 grid-cols-2 items-center justify-center gap-3 flex-wrap'>
+                         {Clints.map((items, index) => (
+                              <div className='w-full h-full bg-gradient-to-tl bg-[#FFE797] dark:bg-zinc-700 rounded-md border border-zinc-300 dark:border-zinc-600'>
+                                   <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
+                                        <h1 className='text-xl  to-[#84994F] font-medium'>{items.compname}</h1>
+                                        <span className='flex items-center justify-start gap-2'>
+                                             <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.websitename} <i class="ri-arrow-right-up-box-line text-xs"></i></a>
+                                        </span>
+                                        <p className='line-clamp-7 text-sm font-mono opacity-70'>{items.discription}</p>
+                                        {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
+                                   </div>
+                              </div>
+                         ))}
+                    </div>
+               </div>
                <div className='w-full h-fit'>
                     <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
-                    <div className='w-full h-fit grid grid-cols-10 items-center justify-center gap-2'>
+                    <div className='w-full h-fit grid grid-cols-4 md:grid-cols-10 items-center justify-center gap-2'>
                          {toolslogo.map((items) => (
                               <div className='flex flex-col items-center justify-center gap-2'>
                                    <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover bg-zinc-50 p-1' />
@@ -302,23 +316,7 @@ function home() {
                          ))}
                     </div>
                </div>
-               <div className='w-full h-fit mb-2'>
-                    <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My clints</h1>
-                    <div className='w-full h-fit grid md:grid-cols-3 grid-cols-2 items-center justify-center gap-3 flex-wrap'>
-                         {Clints.map((items, index) => (
-                              <div className='w-full h-fit bg-zinc-200 dark:bg-zinc-700 rounded-md border border-zinc-300 dark:border-zinc-600'>
-                                   <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
-                                        <h1 className='text-lg font-medium'>{items.compname}</h1>
-                                        <span className='flex items-center justify-start gap-2'>
-                                             <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.websitename} <i class="ri-arrow-right-up-box-line text-xs"></i></a>
-                                        </span>
-                                        <p className='line-clamp-2 text-sm font-mono opacity-70'>{items.discription}</p>
-                                        {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
-                                   </div>
-                              </div>
-                         ))}
-                    </div>
-               </div>
+               
           </div>
      </div>
     </div>
