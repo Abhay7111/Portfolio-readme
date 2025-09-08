@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { toggleTheme } from '../theme'
 
 function home() {
+
+     const [openExtra, setopenExtra] = useState();
      const data = [
           {
                title:'Prasa',
@@ -13,7 +15,7 @@ function home() {
                     "Tailwind CSS",
                     "Remix icon",
                     ],
-               date:'Aug 27, 2025',
+               date:'Sep 24, 2024',
                fullstack:false,
                backend:false,
                frontend:true,
@@ -166,6 +168,18 @@ function home() {
                img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/1200px-Netlify_logo_%282%29.svg.png',
                name:'Git',
           },
+          {
+               img:'https://images.ctfassets.net/crb83veve8xb/2YfNwMlyl1U0DLVXRgL8TB/9e8474e083f2ba01a296343d84f2282d/vercel_thumbnail.webp',
+               name:'Vercel',
+          },
+          {
+               img:'https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png',
+               name:'Leet code',
+          },
+          {
+               img:'https://img.favpng.com/8/7/2/google-adwords-logo-google-ads-logo-design-baWVwp2c.jpg',
+               name:'Google ads',
+          },
      ]
      const Clints = [
           {
@@ -219,6 +233,11 @@ function home() {
                link:'https://wa.me/+917408638739',
                icon:'ri-whatsapp-line',
           },
+          {
+               title:'Resume',
+               link:'https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451',
+               icon:'ri-file-line',
+          },
           
      ]
 
@@ -232,7 +251,7 @@ function home() {
                {/* card 1st */}
                <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
                     <div className='w-full flex items-center justify-between gap-2'>
-                         <h1 className='text-3xl font-semibold'>Hy, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
+                         <h1 className='text-3xl font-semibold'>Hye, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
                          <button onClick={toggleTheme} className='text-sm cursor-pointer font-medium size-8 rounded-md transition-colors'>
                               <span className='hidden dark:inline'><i className='ri-sun-line text-xl'></i></span>
                               <span className='inline dark:hidden'><i className='ri-moon-line text-xl'></i></span>
@@ -242,14 +261,14 @@ function home() {
                     <span className='w-fit flex items-start justify-start lg:'>
                          {plinks.map((items) => (
                               <span>
-                                   {items.link && <a href={items.link} target='_blank' className='text-xl px-2.5 font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'><i className={items.icon}></i></a>}
+                                   {items.link && <a href={items.link} target='_blank' className='text-xl px-2.5 font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'><i className={items.icon} title={items.title}></i></a>}
                               </span>
                          ))}
                          
                     </span>
                </div>
                {/* 2nd */}
-                    <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'>Projects <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
+                    <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
                          {infoopen && <div className='w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
                                    <span className='flex items-center justify-start gap-2'>
                                         <p className='text-sm font-light lowercase'>true</p>
@@ -264,6 +283,7 @@ function home() {
                                    </div>
                               </div>}
                     </span></h1>
+                    <div className='w-full flex flex-wrap'><h3 className='text-sm font-light'>Number of projects : <span className='text-sm font-medium'>{data.length}</span></h3></div>
                {loopdata.map((items, index) => (
                     <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
                          <div className='flex items-center justify-between'>
@@ -285,14 +305,18 @@ function home() {
                          <span className='text-xs'>{items.date}</span>
                     </div>
                ))}
+
+               {/* More projects button */}
                <div className='w-full h-fit flex items-center justify-center'>
-                    <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>Show More Experience <i className='ri-arrow-drop-down-line'></i></button>
+                    <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>More projects <i className='ri-arrow-drop-down-line'></i></button>
                </div>
+
+               {/* clints */}
                <div className='w-full h-fit mb-2'>
                     <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1>
-                    <div className='w-full h-fit grid md:grid-cols-3 grid-cols-2 items-center justify-center gap-3 flex-wrap'>
+                    <div className='w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap'>
                          {Clints.map((items, index) => (
-                              <div className='w-full h-full bg-gradient-to-tl bg-[#FFE797] dark:bg-zinc-700 rounded-md border border-zinc-300 dark:border-zinc-600'>
+                              <div className='w-full h-full bg-gradient-to-tl bg-[#FFE797] dark:bg-zinc-900 rounded-md border border-zinc-300 dark:border-zinc-700'>
                                    <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
                                         <h1 className='text-xl  to-[#84994F] font-medium'>{items.compname}</h1>
                                         <span className='flex items-center justify-start gap-2'>
@@ -305,9 +329,11 @@ function home() {
                          ))}
                     </div>
                </div>
+
+               {/* Tools */}
                <div className='w-full h-fit'>
                     <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
-                    <div className='w-full h-fit grid grid-cols-4 md:grid-cols-10 items-center justify-center gap-2'>
+                    <div className='w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-2'>
                          {toolslogo.map((items) => (
                               <div className='flex flex-col items-center justify-center gap-2'>
                                    <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover bg-zinc-50 p-1' />
@@ -317,6 +343,13 @@ function home() {
                     </div>
                </div>
                
+               <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm'>Extra Information</span></div>
+               {/* Extra */}
+               {<div className={`w-full ${openExtra ? 'h-40' : 'h-0'} overflow-hidden transition-all duration-300 mt-5 flex items-center justify-center`}>
+                    <img 
+                    src={`https://camo.githubusercontent.com/82a9ec9693ac5c3cdb091abbc09e474c744d1989784b9095e51aa460bab44549/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d616268617937313131266c61796f75743d636f6d70616374`}
+                    className='w-fit object-cover' />
+               </div>}
           </div>
      </div>
     </div>
