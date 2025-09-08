@@ -246,18 +246,18 @@ function home() {
      const loopdata = data.slice(0, + adddatalength);
   return (
     <div className='w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300'>
-     <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300'>
+     <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative'>
           <div className=' flex flex-col gap-2 p-2'>
                {/* card 1st */}
                <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
-                    <div className='w-full flex items-center justify-between gap-2'>
-                         <h1 className='text-3xl font-semibold'>Hye, I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
-                         <button onClick={toggleTheme} className='text-sm cursor-pointer font-medium size-8 rounded-md transition-colors'>
+                    <div className='w-full flex items-center justify-center gap-2'>
+                         <h1 className='text-3xl font-semibold dark:text-zinc-300'><span className='text-2xl font-medium dark:text-zinc-400'>Hye,</span> I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
+                         <button onClick={toggleTheme} className='text-sm cursor-pointer font-medium size-8 rounded-md transition-colors absolute top-0 right-0'>
                               <span className='hidden dark:inline'><i className='ri-sun-line text-xl'></i></span>
                               <span className='inline dark:hidden'><i className='ri-moon-line text-xl'></i></span>
                          </button>
                     </div>
-                    <p className='text-sm opacity-75 text-center md:text-start'>My portfolio highlights my expertise in full-stack web development, where I combine engaging UI/UX design with strong Node.js backend APIs to deliver dynamic, user-focused digital experiences.</p>
+                    <p className='text-sm opacity-75 text-center md:text-start dark:text-zinc-300 dark:font-light'>My portfolio highlights my expertise in full-stack web development, where I combine engaging UI/UX design with strong Node.js backend APIs to deliver dynamic, user-focused digital experiences.</p>
                     <span className='w-fit flex items-start justify-start lg:'>
                          {plinks.map((items) => (
                               <span>
@@ -268,7 +268,7 @@ function home() {
                     </span>
                </div>
                {/* 2nd */}
-                    <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
+                    <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span className='dark:text-zinc-300'>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
                          {infoopen && <div className='w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
                                    <span className='flex items-center justify-start gap-2'>
                                         <p className='text-sm font-light lowercase'>true</p>
@@ -288,7 +288,7 @@ function home() {
                     <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
                          <div className='flex items-center justify-between'>
                               <h1 className='text-xl font-medium flex items-center gap-2'>
-                                   {items.title}
+                                   <span className='dark:text-zinc-100'>{items.title}</span>
                                    <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
                                         <p className={`${items.frontend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
                                         <p className={`${items.backend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
@@ -300,9 +300,9 @@ function home() {
                                    {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
                               </span>
                          </div>
-                         <p className='line-clamp- text-sm opacity-75'>{items.discription}</p>
-                         <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
-                         <span className='text-xs'>{items.date}</span>
+                         <p className='text-sm opacity-75 dark:text-zinc-200 dark:font-light'>{items.discription}</p>
+                         <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
+                         <span className='text-xs dark:text-zinc-500'>{items.date}</span>
                     </div>
                ))}
 
@@ -318,12 +318,15 @@ function home() {
                          {Clints.map((items, index) => (
                               <div className='w-full h-full bg-gradient-to-tl bg-[#FFE797] dark:bg-zinc-900 rounded-md border border-zinc-300 dark:border-zinc-700'>
                                    <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
-                                        <h1 className='text-xl  to-[#84994F] font-medium'>{items.compname}</h1>
+                                        <h1 className='text-xl  dark:text-zinc-200 font-medium'>{items.compname}</h1>
                                         <span className='flex items-center justify-start gap-2'>
                                              <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.websitename} <i class="ri-arrow-right-up-box-line text-xs"></i></a>
                                         </span>
-                                        <p className='line-clamp-7 text-sm font-mono opacity-70'>{items.discription}</p>
+                                        <p className='line-clamp-7 text-sm font-mono opacity-70 dark:text-zinc-400'>{items.discription}</p>
+                                        <div className='w-full flex items-center justify-start gap-1'>
                                         {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
+                                        <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-600 dark:text-shadow-blue-600 transition-all duration-300 dark:text-blue-400'><i class="ri-link text-xl"></i></a>
+                                        </div>
                                    </div>
                               </div>
                          ))}
@@ -343,7 +346,7 @@ function home() {
                     </div>
                </div>
                
-               <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm'>Extra Information</span></div>
+               <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm flex items-center justify-center'>Extra Information <i class={` text-xl ${!openExtra ? 'ri-arrow-drop-down-fill' : 'ri-arrow-drop-up-fill'}`}></i></span></div>
                {/* Extra */}
                {<div className={`w-full ${openExtra ? 'h-40' : 'h-0'} overflow-hidden transition-all duration-300 mt-5 flex items-center justify-center`}>
                     <img 
