@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { toggleTheme } from '../theme'
+import React, { useState } from 'react';
+import { toggleTheme } from '../theme';
+import { Helmet } from 'react-helmet';
 
 function home() {
 
@@ -246,6 +247,12 @@ function home() {
      const loopdata = data.slice(0, + adddatalength);
   return (
     <div className='w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300'>
+     <Helmet>
+          <title>Abhay7111</title>
+          <meta name="description" content="This is abhay7111's portfolio." />
+          <meta name="keywords" content="abhay7111, abhay7111 portfolio, portfolio, abhay vishwakarma, abhay vishwakarma portfolio, abhay portfolio, abhay, github clone" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     </Helmet>
      <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative'>
           <div className=' flex flex-col gap-2 p-2'>
                {/* card 1st */}
