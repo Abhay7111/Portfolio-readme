@@ -338,7 +338,7 @@ function home() {
                     <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
                     <div className='w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-2'>
                          {toolslogo.map((items) => (
-                              <div className='flex flex-col items-center justify-center gap-2'>
+                              <div title={items.name} className='flex flex-col items-center justify-center gap-2'>
                                    <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover bg-zinc-50 p-1' />
                                    <p className='text-sm'>{items.name}</p>
                               </div>
