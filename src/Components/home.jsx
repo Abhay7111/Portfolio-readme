@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toggleTheme } from '../theme';
 import { Helmet } from 'react-helmet';
 
@@ -20,6 +20,22 @@ function home() {
                fullstack:false,
                backend:false,
                frontend:true,
+          },
+          {
+               title:'Ochi clone',
+               discription:'I cloned the Ochi website, focusing on pixel-perfect design, smooth animations, and responsive layouts. This project highlights my expertise in front-end development, modern UI/UX, and performance optimization',
+               links:'https://abhay7111.netlify.app/',
+               repo:'https://github.com/abhay7111/reactlive',
+               tech:[
+                    "React js",
+                    "JavaScript",
+                    "framer-motion",
+                    "locomotive-scroll",
+                    ],
+               date:'Mar 12, 2024',
+               frontend:true,
+               backend:false,
+               fullstack:false,
           },
           {
                title:'Blog',
@@ -100,21 +116,7 @@ function home() {
                backend:false,
                frontend:true,
           },
-          {
-               title:'APIs',
-               discription:'I designed and deployed APIs in Node.js to manage databases, handle authentication, and provide smooth communication between frontend and backend.',
-               links:'https://abhay7111github.netlify.app/',
-               repo:'private',
-               tech:[
-                    "Node js",
-                    "Express js",
-                    "Mongo DB",
-                    ],
-               date:'Mar 12, 2024',
-               fullstack:false,
-               backend:true,
-               frontend:false,
-          },
+          
      ]
      const toolslogo = [
           {
@@ -245,13 +247,50 @@ function home() {
      const [infoopen, setinfoopen] = useState(null);
      const [adddatalength, setadddatalength] = useState(6);
      const loopdata = data.slice(0, + adddatalength);
+
+
+     // Projects function
+     function Projects(items){
+          return (
+               <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
+               <div className='flex items-center justify-between'>
+                    <h1 className='text-xl font-medium flex items-center gap-2'>
+                         <span className='dark:text-zinc-100'>{items.title}</span>
+                         <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
+                              <p className={`${items.frontend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
+                              <p className={`${items.backend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
+                              <p className={`${items.fullstack ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
+                         </span>
+                    </h1>
+                    <span className='flex items-center gap-3 pr-5'>
+                         {items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.repo === 'private' ? 'private' : 'Repo'} <i className="ri-git-repository-line"></i></a>}
+                         {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
+                    </span>
+               </div>
+               <p className='text-sm opacity-75 dark:text-zinc-200 dark:font-light'>{items.discription}</p>
+               <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
+               <span className='text-xs dark:text-zinc-500'>{items.date}</span>
+          </div>
+          )
+     }
   return (
     <div className='w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300'>
      <Helmet>
-          <title>Abhay7111</title>
-          <meta name="description" content="This is abhay7111's portfolio." />
-          <meta name="keywords" content="abhay7111, abhay7111 portfolio, portfolio, abhay vishwakarma, abhay vishwakarma portfolio, abhay portfolio, abhay, github clone" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Abhay Vishwakarma | Full Stack Web Developer Portfolio | Abhay7111</title>
+          <meta name="description" content="Explore the professional portfolio of Abhay Vishwakarma (Abhay7111), a Full Stack Web Developer specializing in UI/UX, Node.js, React, and modern web technologies. View projects, resume, and contact information." />
+          <meta name="keywords" content="Abhay Vishwakarma, Abhay7111, Full Stack Developer, Web Developer, UI/UX Designer, Node.js, React, JavaScript, Portfolio, Resume, Projects, Backend, Frontend, MERN, MongoDB, Express, Google SEO, Software Engineer, India, Hire Developer" />
+          <meta name="author" content="Abhay Vishwakarma" />
+          <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta property="og:title" content="Abhay Vishwakarma | Full Stack Web Developer Portfolio" />
+          <meta property="og:description" content="Discover the work and skills of Abhay Vishwakarma (Abhay7111), a passionate full stack web developer with expertise in UI/UX, Node.js, and dynamic web applications." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://github.com/Abhay7111" />
+          <meta property="og:image" content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Abhay Vishwakarma | Full Stack Web Developer Portfolio" />
+          <meta name="twitter:description" content="Portfolio of Abhay Vishwakarma (Abhay7111) - Full Stack Web Developer, UI/UX Designer, Node.js Expert." />
+          <meta name="twitter:image" content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451" />
      </Helmet>
      <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative'>
           <div className=' flex flex-col gap-2 p-2'>
@@ -291,27 +330,8 @@ function home() {
                               </div>}
                     </span></h1>
                     <div className='w-full flex flex-wrap'><h3 className='text-sm font-light'>Number of projects : <span className='text-sm font-medium'>{data.length}</span></h3></div>
-               {loopdata.map((items, index) => (
-                    <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
-                         <div className='flex items-center justify-between'>
-                              <h1 className='text-xl font-medium flex items-center gap-2'>
-                                   <span className='dark:text-zinc-100'>{items.title}</span>
-                                   <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
-                                        <p className={`${items.frontend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
-                                        <p className={`${items.backend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
-                                        <p className={`${items.fullstack ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
-                                   </span>
-                              </h1>
-                              <span className='flex items-center gap-3 pr-5'>
-                                   {items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.repo === 'private' ? 'private' : 'Repo'} <i className="ri-git-repository-line"></i></a>}
-                                   {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
-                              </span>
-                         </div>
-                         <p className='text-sm opacity-75 dark:text-zinc-200 dark:font-light'>{items.discription}</p>
-                         <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
-                         <span className='text-xs dark:text-zinc-500'>{items.date}</span>
-                    </div>
-               ))}
+
+               {loopdata.map(Projects)}
 
                {/* More projects button */}
                <div className='w-full h-fit flex items-center justify-center'>
@@ -326,9 +346,6 @@ function home() {
                               <div className='w-full h-full bg-gradient-to-tl bg-[#FFE797] dark:bg-zinc-900 rounded-md border border-zinc-300 dark:border-zinc-700'>
                                    <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
                                         <h1 className='text-xl  dark:text-zinc-200 font-medium'>{items.compname}</h1>
-                                        <span className='flex items-center justify-start gap-2'>
-                                             <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.websitename} <i class="ri-arrow-right-up-box-line text-xs"></i></a>
-                                        </span>
                                         <p className='line-clamp-7 text-sm font-mono opacity-70 dark:text-zinc-400'>{items.discription}</p>
                                         <div className='w-full flex items-center justify-start gap-1'>
                                         {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
