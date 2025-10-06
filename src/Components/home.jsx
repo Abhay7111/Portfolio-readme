@@ -342,7 +342,7 @@ function home() {
                </div>
                {/* 2nd */}
                     <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span className='dark:text-zinc-300'>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
-                         {infoopen && <div className='w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
+                         {infoopen && <div className='max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
                                    <span className='flex items-center justify-start gap-2'>
                                         <p className='text-sm font-light lowercase'>true</p>
                                         <div className='size-2 bg-green-400 rounded-full'></div>
@@ -352,7 +352,15 @@ function home() {
                                    <div className='flex flex-col items-start gap-1 lowercase text-sm font-light mt-2'>
                                         <p className='text-nowrap'>1. frontend</p>
                                         <p className='text-nowrap'>2. backend</p>
-                                        <p className='text-nowrap'>3. full-stack</p>
+                                        <p className='text-nowrap pb-2'>3. full-stack</p>
+                                        <p className='flex items-center gap-1.5'>
+                                        <div className='size-2 bg-yellow-400 rounded-full'></div>
+                                        <p className='text-xs font-medium text-nowrap'>Bacend unvaluable</p>
+                                        </p>
+                                        <p className='flex items-center gap-1.5'>
+                                        <div className='size-2 bg-orange-400 rounded-full'></div>
+                                        <p className='text-xs font-medium text-nowrap'>Frontend unvaluable</p>
+                                        </p>
                                    </div>
                               </div>}
                     </span></h1>
