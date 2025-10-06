@@ -243,6 +243,22 @@ function home() {
           },
           
      ]
+     const learning = [
+          {
+               subject:'Leet code',
+               class:'30 Days of JavaScript',
+               class_from:`Learn With Chirag`,
+               start_date:'07 | sep | 2025',
+               end_date:'Running',
+          },
+          {
+               subject:'TypeScript',
+               class:'TypeScript Domination - Full Course',
+               class_from:'Sheryians Coding School',
+               start_date:'03 | oct | 2025',
+               end_date:'Running',
+          },
+     ]
 
      const [infoopen, setinfoopen] = useState(null);
      const [adddatalength, setadddatalength] = useState(6);
@@ -271,6 +287,17 @@ function home() {
                <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
                <span className='text-xs dark:text-zinc-500'>{items.date}</span>
           </div>
+          )
+     }
+
+     function learn_now(items) {
+          return (
+               <div className='w-full h-fit py-4'>
+                    <h1 className='text-base font-semibold'>{items.subject}</h1>
+                    <p className='text-sm opacity-70 py-1'>{items.class}</p>
+                    <p className='text-xs font-medium'>{items.class_from}</p>
+                    <i className='text-xs font-light opacity-60'>{items.start_date} <span className='font-bold'>-</span> {items.end_date}</i>
+               </div>
           )
      }
   return (
@@ -338,6 +365,12 @@ function home() {
                     <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>More projects <i className='ri-arrow-drop-down-line'></i></button>
                </div>
 
+               {/* Still Learning */}
+               <div className='w-full min-h-20'>
+                    <h1 className='py-4 text-2xl font-semibold'>Learning :</h1>
+                    {learning.map(learn_now)}
+               </div>
+
                {/* clints */}
                <div className='w-full h-fit mb-2'>
                     <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1>
@@ -369,8 +402,9 @@ function home() {
                          ))}
                     </div>
                </div>
-               
+
                <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm flex items-center justify-center'>Extra Information <i class={` text-xl ${!openExtra ? 'ri-arrow-drop-down-fill' : 'ri-arrow-drop-up-fill'}`}></i></span></div>
+
                {/* Extra */}
                {<div className={`w-full ${openExtra ? 'h-40' : 'h-0'} overflow-hidden transition-all duration-300 mt-5 flex items-center justify-center`}>
                     <img 
