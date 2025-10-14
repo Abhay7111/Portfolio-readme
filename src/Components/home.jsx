@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet';
 function home() {
 
      const [openExtra, setopenExtra] = useState();
+     const [openCertificate, setopenCertificate ] = useState();
+
      const data = [
           {
                title:'Prasa',
@@ -17,9 +19,9 @@ function home() {
                     "Remix icon",
                     ],
                date:'Sep 24, 2024',
-               fullstack:false,
-               backend:false,
-               frontend:true,
+               fullstack:0,
+               backend:0,
+               frontend:1,
           },
           {
                title:'Ochi clone',
@@ -33,9 +35,9 @@ function home() {
                     "locomotive-scroll",
                     ],
                date:'Mar 12, 2024',
-               frontend:true,
-               backend:false,
-               fullstack:false,
+               frontend:1,
+               backend:0,
+               fullstack:0,
           },
           {
                title:'Blog',
@@ -50,9 +52,9 @@ function home() {
                     "Express js",
                     ],
                date:'Jul 16, 2024',
-               fullstack:true,
-               backend:true,
-               frontend:true,
+               fullstack:1,
+               backend:2,
+               frontend:1,
           },
           {
                title:'Spotify Clone',
@@ -65,9 +67,9 @@ function home() {
                     "CSS",
                     ],
                date:'Dec 1, 2023',
-               fullstack:false,
-               backend:false,
-               frontend:true,
+               fullstack:0,
+               backend:0,
+               frontend:1,
           },
           {
                title:'biz-growth',
@@ -80,9 +82,9 @@ function home() {
                     "CSS",
                     ],
                date:'Mar 24, 2024',
-               fullstack:false,
-               backend:false,
-               frontend:true,
+               fullstack:0,
+               backend:0,
+               frontend:1,
           },
           {
                title:'Minefood',
@@ -96,13 +98,13 @@ function home() {
                     "Remix icon",
                     ],
                date:'Nov 13, 2024',
-               fullstack:true,
-               backend:true,
-               frontend:true,
+               fullstack:1,
+               backend:2,
+               frontend:1,
           },
           {
                title:'Github clone',
-               discription:'I built the user interface and experience for this GitHub clone, meticulously replicating its design and interactive elements. This project showcases my skills in creating responsive, component-driven web applications that provide an intuitive user experience.',
+               discription:'I built the user interface and experience for GitHub clone, meticulously replicating its design and interactive elements. This project showcases my skills in creating responsive, component-driven web applications that provide an intuitive user experience.',
                links:'https://abhay7111github.netlify.app/',
                repo:'',
                tech:[
@@ -112,9 +114,25 @@ function home() {
                     "Remix icon",
                     ],
                date:'Mar 12, 2024',
-               fullstack:false,
-               backend:false,
-               frontend:true,
+               fullstack:0,
+               backend:0,
+               frontend:1,
+          },
+          {
+               title:'Linlin kettle',
+               discription:'I build a website called Linlin, I recreated this website for show case of "Linlin kettles"',
+               links:'',
+               repo:'',
+               tech:[
+                    "React js",
+                    "JavaScript",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    ],
+               date:'Sep 16, 2025',
+               fullstack:0,
+               backend:0,
+               frontend:1,
           },
           
      ]
@@ -183,6 +201,10 @@ function home() {
                img:'https://img.favpng.com/8/7/2/google-adwords-logo-google-ads-logo-design-baWVwp2c.jpg',
                name:'Google ads',
           },
+          {
+               img:'https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg',
+               name:'Type script',
+          },
      ]
      const Clints = [
           {
@@ -191,6 +213,8 @@ function home() {
                websitelink:'https://ledtvexpert.netlify.app/',
                happy:true,
                discription:'LedTVExpert is a leading online platform specializing in LED TV sales and services. We offer a wide range of high-quality LED TVs from top brands, ensuring the best viewing experience for our customers. Our expert team provides reliable installation and repair services, making us a trusted choice for all your LED TV needs.',
+               start_date:'30 | Arl | 2024',
+               end_date:'23 | Oct | 2024',
           },
           {
                compname:'Seprate digital',
@@ -198,6 +222,8 @@ function home() {
                websitelink:'https://separatedigital.netlify.app/',
                happy:true,
                discription:'Seprate Digital is a dynamic digital marketing agency dedicated to helping businesses thrive in the online world. We specialize in creating tailored digital marketing strategies that drive results, from SEO and social media management to content creation and PPC advertising. Our team of experts is committed to delivering innovative solutions that enhance brand visibility and engagement.',
+               start_date:'16 | jul | 2024',
+               end_date:'10 | Aug | 2025'
           },
      ]
      const plinks = [
@@ -259,6 +285,17 @@ function home() {
                end_date:'Running',
           },
      ]
+     const Certificates_data = [
+          {
+               _id:'1',
+               Certificate:'https://template.canva.com/EADajhBOkWc/1/0/400w-js8VTePh3c0.jpg',
+               Certificate_name:'ADCA',
+               Certificate_date:'11-jan-2025',
+               Certificate_duration:'11-jan-2025 ',
+               Certificate_from:'Advance computer coaching center',
+               Certificate_description:'',
+          },
+     ]
 
      const [infoopen, setinfoopen] = useState(null);
      const [adddatalength, setadddatalength] = useState(6);
@@ -273,9 +310,39 @@ function home() {
                     <h1 className='text-xl font-medium flex items-center gap-2'>
                          <span className='dark:text-zinc-100'>{items.title}</span>
                          <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
-                              <p className={`${items.frontend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
-                              <p className={`${items.backend ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
-                              <p className={`${items.fullstack ? 'bg-green-400' : 'bg-red-400'} size-1.5 rounded-full`}></p>
+                              <p
+                                   className={`${
+                                        items.frontend === 1
+                                             ? 'bg-green-400'
+                                             : items.frontend === 0
+                                             ? 'bg-red-400'
+                                             : 'bg-gray-400'
+                                   } size-1.5 rounded-full`}
+                                   title="Frontend"
+                              ></p>
+                              <p
+                                   className={`${
+                                        items.backend === 1
+                                             ? 'bg-green-400'
+                                             : items.backend === 0
+                                             ? 'bg-red-400'
+                                             : items.backend === 2
+                                             ? 'bg-yellow-400'
+                                             : 'bg-blue-400' 
+                                   } size-1.5 rounded-full`}
+                                   title="Backend"
+                              ></p>
+                              <p
+                                   className={`${
+                                        items.fullstack === 1
+                                             ? 'bg-green-400'
+                                             : items.fullstack === 0
+                                             ? 'bg-red-400'
+                                             : 'bg-gray-400'
+                                   } size-1.5 rounded-full`}
+                                   title="Fullstack"
+                              ></p>
+                              {/* Legend: Green = true, Red = false, Gray = inactive */}
                          </span>
                     </h1>
                     <span className='flex items-center gap-3 pr-5'>
@@ -292,11 +359,28 @@ function home() {
 
      function learn_now(items) {
           return (
-               <div className='w-full h-fit py-4'>
+               <div className='w-full h-full p-1 rounded-md'>
                     <h1 className='text-base font-semibold'>{items.subject}</h1>
-                    <p className='text-sm opacity-70 py-1'>{items.class}</p>
-                    <p className='text-xs font-medium'>{items.class_from}</p>
+                    <p className='text-sm opacity-90 py-1'>{items.class}</p>
+                    <p className='text-xs font-medium opacity-60'>{items.class_from}</p>
                     <i className='text-xs font-light opacity-60'>{items.start_date} <span className='font-bold'>-</span> {items.end_date}</i>
+               </div>
+          )
+     }
+
+     function Certificates (items) {
+          return(
+               <div key={items._id} className='w-full h-full rounded-xl overflow-hidden  p-2 bg-zinc-100'>
+                    <img onClick={() => setopenCertificate(true)} src={items.Certificate} className='w-full h-36 rounded-[4px] ' />
+                    <div className='w-full flex items-center justify-between gap-2'>
+                         <h1 className='text-base font-semibold py-2'>{items.Certificate_name}</h1>
+                         <p className='text-xs font-medium'>{items.Certificate_date}</p>
+                    </div>
+                    <div className='w-full'>
+                         <div className='text-xs opacity-70 text-start font-medium overflow-x-auto whitespace-nowrap' style={{ maxWidth: '100%' }}>
+                              <span>{items.Certificate_from}</span>
+                         </div>
+                    </div>
                </div>
           )
      }
@@ -349,18 +433,14 @@ function home() {
                                         <p className='text-sm font-light lowercase'>false</p>
                                         <div className='size-2 bg-red-400 rounded-full'></div>
                                    </span>
+                                        <p className='flex items-center gap-1.5 mt-1'>
+                                        <div className='size-2 bg-yellow-400 rounded-full'></div>
+                                        <p className='text-xs font-normal'>unvaluable</p>
+                                        </p>
                                    <div className='flex flex-col items-start gap-1 lowercase text-sm font-light mt-2'>
                                         <p className='text-nowrap'>1. frontend</p>
                                         <p className='text-nowrap'>2. backend</p>
                                         <p className='text-nowrap pb-2'>3. full-stack</p>
-                                        <p className='flex items-center gap-1.5'>
-                                        <div className='size-2 bg-yellow-400 rounded-full'></div>
-                                        <p className='text-xs font-medium text-nowrap'>Bacend unvaluable</p>
-                                        </p>
-                                        <p className='flex items-center gap-1.5'>
-                                        <div className='size-2 bg-orange-400 rounded-full'></div>
-                                        <p className='text-xs font-medium text-nowrap'>Frontend unvaluable</p>
-                                        </p>
                                    </div>
                               </div>}
                     </span></h1>
@@ -376,7 +456,14 @@ function home() {
                {/* Still Learning */}
                <div className='w-full min-h-20'>
                     <h1 className='py-4 text-2xl font-semibold'>Learning :</h1>
-                    {learning.map(learn_now)}
+                    <div className='grid grid-cols-4 gap-2'>
+                         {learning.map(learn_now)}
+                    </div>
+               </div>
+
+               <h1 className='text-2xl font-semibold'>Certifications </h1>
+               <div className='w-full grid grid-cols-4 gap-2'>
+                    {Certificates_data.map(Certificates)}
                </div>
 
                {/* clints */}
@@ -384,10 +471,10 @@ function home() {
                     <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1>
                     <div className='w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap'>
                          {Clints.map((items, index) => (
-                              <div className='w-full h-full bg-gradient-to-tl bg-[#FFE797] dark:bg-zinc-900 rounded-md border border-zinc-300 dark:border-zinc-700'>
+                              <div className='w-full h-full bg-gradient-to-tl bg-zinc-100 dark:bg-zinc-800 rounded-md border border-zinc-300 dark:border-zinc-700'>
                                    <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
-                                        <h1 className='text-xl  dark:text-zinc-200 font-medium'>{items.compname}</h1>
-                                        <p className='line-clamp-7 text-sm font-mono opacity-70 dark:text-zinc-400'>{items.discription}</p>
+                                        <h1 className='text-xl  dark:text-zinc-200 font-medium w-full flex flex-col items-start justify-center gap-1'><span>{items.compname}</span> <span className='text-xs font-medium opacity-50'>{items.start_date} - {items.end_date}</span></h1>
+                                        <p className='line-clamp-5 tracking-wider first-letter:uppercase lowercase text-sm font-light opacity-80 dark:text-zinc-400'>{items.discription}</p>
                                         <div className='w-full flex items-center justify-start gap-1'>
                                         {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
                                         <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-600 dark:text-shadow-blue-600 transition-all duration-300 dark:text-blue-400'><i class="ri-link text-xl"></i></a>
