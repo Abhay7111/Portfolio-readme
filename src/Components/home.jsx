@@ -121,8 +121,8 @@ function home() {
           {
                title:'Linlin kettle',
                discription:'I build a website called Linlin, I recreated this website for show case of "Linlin kettles"',
-               links:'',
-               repo:'',
+               links:'https://abhay7111-linlin.netlify.app/',
+               repo:'https://github.com/abhay7111/linlin/',
                tech:[
                     "React js",
                     "JavaScript",
@@ -207,24 +207,15 @@ function home() {
           },
      ]
      const Clints = [
-          {
-               compname:'Ledtvexpert',
-               websitename:'ledtvexpert',
-               websitelink:'https://ledtvexpert.netlify.app/',
-               happy:true,
-               discription:'LedTVExpert is a leading online platform specializing in LED TV sales and services. We offer a wide range of high-quality LED TVs from top brands, ensuring the best viewing experience for our customers. Our expert team provides reliable installation and repair services, making us a trusted choice for all your LED TV needs.',
-               start_date:'30 | Arl | 2024',
-               end_date:'23 | Oct | 2024',
-          },
-          {
-               compname:'Seprate digital',
-               websitename:'sepratedigital',
-               websitelink:'https://separatedigital.netlify.app/',
-               happy:true,
-               discription:'Seprate Digital is a dynamic digital marketing agency dedicated to helping businesses thrive in the online world. We specialize in creating tailored digital marketing strategies that drive results, from SEO and social media management to content creation and PPC advertising. Our team of experts is committed to delivering innovative solutions that enhance brand visibility and engagement.',
-               start_date:'16 | jul | 2024',
-               end_date:'10 | Aug | 2025'
-          },
+          // {
+          //      compname:'',
+          //      websitename:'',
+          //      websitelink:'',
+          //      happy:'',
+          //      discription:'',
+          //      start_date:'',
+          //      end_date:'',
+          // }
      ]
      const plinks = [
           {
@@ -456,19 +447,19 @@ function home() {
                {/* Still Learning */}
                <div className='w-full min-h-20'>
                     <h1 className='py-4 text-2xl font-semibold'>Learning :</h1>
-                    <div className='grid grid-cols-4 gap-2'>
+                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2'>
                          {learning.map(learn_now)}
                     </div>
                </div>
 
                <h1 className='text-2xl font-semibold'>Certifications </h1>
-               <div className='w-full grid grid-cols-4 gap-2'>
+               <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2'>
                     {Certificates_data.map(Certificates)}
                </div>
 
                {/* clints */}
                <div className='w-full h-fit mb-2'>
-                    <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1>
+                    {/* <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1> */}
                     <div className='w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap'>
                          {Clints.map((items, index) => (
                               <div className='w-full h-full bg-gradient-to-tl bg-zinc-100 dark:bg-zinc-800 rounded-md border border-zinc-300 dark:border-zinc-700'>
