@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { toggleTheme } from '../theme';
 import { Helmet } from 'react-helmet';
 
@@ -9,6 +9,90 @@ function home() {
 
      const data = [
           {
+               title:'Voice Assistant',
+               discription:'I developed a voice assistant web application using React.js and Tailwind CSS for the frontend, and Node.js with Express.js for backend services. The app integrates various APIs. So users can teach it for new commands and new data.',
+               links:'https://abhay7111-voice-assistant.netlify.app/',
+               repo:'',
+               tech:[
+                    "React js",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    "React Router",
+                    "React Markdown",
+                    "APIs",
+                    "Node.js",
+                    "Express.js",
+                    "etc.",
+                    ],
+               date:'Oct 15, 2025',
+               fullstack:1,
+               backend:1,
+               frontend:1,
+          },
+          {
+               title:'Course',
+               discription:'I Created a responsive course website using React.js and Tailwind CSS. The site features a clean design, UI looks professional, like dashboard, easy navigation, and showcases of course offerings effectively.',
+               links:'https://abhay7111-courses.netlify.app/',
+               repo:'',
+               tech:[
+                    "React js",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    "React Router",
+                    "React Markdown",
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "APIs",
+                    "etc.",
+                    ],
+               date:'Dec 14, 2025',
+               fullstack:1,
+               backend:1,
+               frontend:1,
+          },
+          {
+               title:'Blog',
+               discription:'I developed a dynamic blog website, designed to provide a seamless platform for publishing engaging content and offering an intuitive reading experience for users.',
+               links:'https://separatedigital.netlify.app/Blog',
+               repo:'',
+               tech:[
+                    "React js",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    "Node js",
+                    "Express js",
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "etc.",
+                    ],
+               date:'Jul 16, 2024',
+               fullstack:1,
+               backend:1,
+               frontend:1,
+          },
+          {
+               title:'Minefood',
+               discription:'I designed and developed this comprehensive website for Minefood. The platform showcases their unique menu and inviting ambiance, enhancing their online presence and connecting them with a wider audience.',
+               links:'https://minefood.netlify.app/',
+               repo:'',
+               tech:[
+                    "React js",
+                    "HTML",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "etc.",
+                    ],
+               date:'Nov 13, 2024',
+               fullstack:1,
+               backend:1,
+               frontend:1,
+          },
+          {
                title:'Prasa',
                discription:'I created a jewellery website with a clean, elegant design that beautifully showcases collections. The site is fully responsive, user-friendly, and highlights the brand’s identity while providing smooth navigation and a professional online presence.',
                links:'https://prasa-ruddy.vercel.app/',
@@ -17,6 +101,7 @@ function home() {
                     "React js",
                     "Tailwind CSS",
                     "Remix icon",
+                    "etc.",
                     ],
                date:'Sep 24, 2024',
                fullstack:0,
@@ -33,6 +118,7 @@ function home() {
                     "JavaScript",
                     "framer-motion",
                     "locomotive-scroll",
+                    "etc.",
                     ],
                date:'Mar 12, 2024',
                frontend:1,
@@ -40,20 +126,37 @@ function home() {
                fullstack:0,
           },
           {
-               title:'Blog',
-               discription:'I developed a dynamic blog website, designed to provide a seamless platform for publishing engaging content and offering an intuitive reading experience for users.',
-               links:'https://separatedigital.netlify.app/Blog',
+               title:'Linlin kettle',
+               discription:'I build a website called Linlin, I recreated this website for show case of "Linlin kettles"',
+               links:'https://abhay7111-linlin.netlify.app/',
+               repo:'https://github.com/abhay7111/linlin/',
+               tech:[
+                    "React js",
+                    "JavaScript",
+                    "Tailwind CSS",
+                    "Remix icon",
+                    "etc.",
+                    ],
+               date:'Sep 16, 2025',
+               fullstack:0,
+               backend:0,
+               frontend:1,
+          },
+          {
+               title:'Github clone',
+               discription:'I built the user interface and experience for GitHub clone, meticulously replicating its design and interactive elements. This project showcases my skills in creating responsive, component-driven web applications that provide an intuitive user experience.',
+               links:'https://abhay7111github.netlify.app/',
                repo:'',
                tech:[
                     "React js",
+                    "HTML",
                     "Tailwind CSS",
                     "Remix icon",
-                    "Node js",
-                    "Express js",
+                    "etc.",
                     ],
-               date:'Jul 16, 2024',
-               fullstack:1,
-               backend:2,
+               date:'Mar 12, 2024',
+               fullstack:0,
+               backend:0,
                frontend:1,
           },
           {
@@ -65,6 +168,7 @@ function home() {
                     "JavaScript",
                     "HTML 5",
                     "CSS",
+                    "etc.",
                     ],
                date:'Dec 1, 2023',
                fullstack:0,
@@ -80,56 +184,9 @@ function home() {
                     "JavaScript",
                     "HTML 5",
                     "CSS",
+                    "etc.",
                     ],
                date:'Mar 24, 2024',
-               fullstack:0,
-               backend:0,
-               frontend:1,
-          },
-          {
-               title:'Minefood',
-               discription:'I designed and developed this comprehensive website for Minefood. The platform showcases their unique menu and inviting ambiance, enhancing their online presence and connecting them with a wider audience.',
-               links:'https://minefood.netlify.app/',
-               repo:'',
-               tech:[
-                    "React js",
-                    "HTML",
-                    "Tailwind CSS",
-                    "Remix icon",
-                    ],
-               date:'Nov 13, 2024',
-               fullstack:1,
-               backend:2,
-               frontend:1,
-          },
-          {
-               title:'Github clone',
-               discription:'I built the user interface and experience for GitHub clone, meticulously replicating its design and interactive elements. This project showcases my skills in creating responsive, component-driven web applications that provide an intuitive user experience.',
-               links:'https://abhay7111github.netlify.app/',
-               repo:'',
-               tech:[
-                    "React js",
-                    "HTML",
-                    "Tailwind CSS",
-                    "Remix icon",
-                    ],
-               date:'Mar 12, 2024',
-               fullstack:0,
-               backend:0,
-               frontend:1,
-          },
-          {
-               title:'Linlin kettle',
-               discription:'I build a website called Linlin, I recreated this website for show case of "Linlin kettles"',
-               links:'https://abhay7111-linlin.netlify.app/',
-               repo:'https://github.com/abhay7111/linlin/',
-               tech:[
-                    "React js",
-                    "JavaScript",
-                    "Tailwind CSS",
-                    "Remix icon",
-                    ],
-               date:'Sep 16, 2025',
                fullstack:0,
                backend:0,
                frontend:1,
@@ -262,30 +319,23 @@ function home() {
      ]
      const learning = [
           {
-               subject:'Leet code',
-               class:'30 Days of JavaScript',
-               class_from:`Learn With Chirag`,
-               start_date:'07 | sep | 2025',
-               end_date:'Running',
-          },
-          {
                subject:'TypeScript',
                class:'TypeScript Domination - Full Course',
                class_from:'Sheryians Coding School',
                start_date:'03 | oct | 2025',
-               end_date:'Running',
+               end_date:'✔️ Completed',
           },
      ]
      const Certificates_data = [
-          {
-               _id:'1',
-               Certificate:'https://template.canva.com/EADajhBOkWc/1/0/400w-js8VTePh3c0.jpg',
-               Certificate_name:'ADCA',
-               Certificate_date:'11-jan-2025',
-               Certificate_duration:'11-jan-2025 ',
-               Certificate_from:'Advance computer coaching center',
-               Certificate_description:'',
-          },
+          // {
+          //      _id:'1',
+          //      Certificate:'https://cdn.pixabay.com/photo/2017/10/17/07/51/boards-2859795_1280.png',
+          //      Certificate_name:'ADCA',
+          //      Certificate_date:'11-jan-2025',
+          //      Certificate_duration:'11-jan-2025 ',
+          //      Certificate_from:'Advance computer coaching center',
+          //      Certificate_description:'',
+          // },
      ]
 
      const [infoopen, setinfoopen] = useState(null);
@@ -308,7 +358,7 @@ function home() {
                                              : items.frontend === 0
                                              ? 'bg-red-400'
                                              : 'bg-gray-400'
-                                   } size-1.5 rounded-full`}
+                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
                                    title="Frontend"
                               ></p>
                               <p
@@ -320,7 +370,7 @@ function home() {
                                              : items.backend === 2
                                              ? 'bg-yellow-400'
                                              : 'bg-blue-400' 
-                                   } size-1.5 rounded-full`}
+                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
                                    title="Backend"
                               ></p>
                               <p
@@ -330,7 +380,7 @@ function home() {
                                              : items.fullstack === 0
                                              ? 'bg-red-400'
                                              : 'bg-gray-400'
-                                   } size-1.5 rounded-full`}
+                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
                                    title="Fullstack"
                               ></p>
                               {/* Legend: Green = true, Red = false, Gray = inactive */}
@@ -362,7 +412,7 @@ function home() {
      function Certificates (items) {
           return(
                <div key={items._id} className='w-full h-full rounded-xl overflow-hidden  p-2 bg-zinc-100'>
-                    <img onClick={() => setopenCertificate(true)} src={items.Certificate} className='w-full h-36 rounded-[4px] ' />
+                    <img onClick={() => setopenCertificate(true)} src={items.Certificate} className='w-full h-36 rounded-[4px] cursor-pointer ' />
                     <div className='w-full flex items-center justify-between gap-2'>
                          <h1 className='text-base font-semibold py-2'>{items.Certificate_name}</h1>
                          <p className='text-xs font-medium'>{items.Certificate_date}</p>
@@ -375,132 +425,131 @@ function home() {
                </div>
           )
      }
-  return (
-    <div className='w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300'>
-     <Helmet>
-          <title>Abhay Vishwakarma | Full Stack Web Developer Portfolio | Abhay7111</title>
-          <meta name="description" content="Explore the professional portfolio of Abhay Vishwakarma (Abhay7111), a Full Stack Web Developer specializing in UI/UX, Node.js, React, and modern web technologies. View projects, resume, and contact information." />
-          <meta name="keywords" content="Abhay Vishwakarma, Abhay7111, Full Stack Developer, Web Developer, UI/UX Designer, Node.js, React, JavaScript, Portfolio, Resume, Projects, Backend, Frontend, MERN, MongoDB, Express, Google SEO, Software Engineer, India, Hire Developer" />
-          <meta name="author" content="Abhay Vishwakarma" />
-          <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta property="og:title" content="Abhay Vishwakarma | Full Stack Web Developer Portfolio" />
-          <meta property="og:description" content="Discover the work and skills of Abhay Vishwakarma (Abhay7111), a passionate full stack web developer with expertise in UI/UX, Node.js, and dynamic web applications." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://github.com/Abhay7111" />
-          <meta property="og:image" content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Abhay Vishwakarma | Full Stack Web Developer Portfolio" />
-          <meta name="twitter:description" content="Portfolio of Abhay Vishwakarma (Abhay7111) - Full Stack Web Developer, UI/UX Designer, Node.js Expert." />
-          <meta name="twitter:image" content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451" />
-     </Helmet>
-     <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative'>
-          <div className=' flex flex-col gap-2 p-2'>
-               {/* card 1st */}
-               <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
-                    <div className='w-full flex items-center justify-center gap-2'>
-                         <h1 className='text-3xl font-semibold dark:text-zinc-300'><span className='text-2xl font-medium dark:text-zinc-400'>Hye,</span> I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
-                         <button onClick={toggleTheme} className='text-sm cursor-pointer font-medium size-8 rounded-md transition-colors absolute top-0 right-0'>
-                              <span className='hidden dark:inline'><i className='ri-sun-line text-xl'></i></span>
-                              <span className='inline dark:hidden'><i className='ri-moon-line text-xl'></i></span>
-                         </button>
+return (
+     <div className='w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300 relative'>
+      <Helmet>
+                    <title>Abhay Vishwakarma | Full Stack Web Developer Portfolio | Abhay7111</title>
+                    <meta name="description" content="Explore the professional portfolio of Abhay Vishwakarma (Abhay7111), a Full Stack Web Developer specializing in UI/UX, Node.js, React, and modern web technologies. View projects, resume, and contact information." />
+                    <meta name="keywords" content="Abhay Vishwakarma, Abhay7111, Full Stack Developer, Web Developer, UI/UX Designer, Node.js, React, JavaScript, Portfolio, Resume, Projects, Backend, Frontend, MERN, MongoDB, Express, Google SEO, Software Engineer, India, Hire Developer" />
+                    <meta name="author" content="Abhay Vishwakarma" />
+                    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <meta property="og:title" content="Abhay Vishwakarma | Full Stack Web Developer Portfolio" />
+                    <meta property="og:description" content="Discover the work and skills of Abhay Vishwakarma (Abhay7111), a passionate full stack web developer with expertise in UI/UX, Node.js, and dynamic web applications." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://github.com/Abhay7111" />
+                    <meta property="og:image" content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Abhay Vishwakarma | Full Stack Web Developer Portfolio" />
+                    <meta name="twitter:description" content="Portfolio of Abhay Vishwakarma (Abhay7111) - Full Stack Web Developer, UI/UX Designer, Node.js Expert." />
+                    <meta name="twitter:image" content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451" />
+      </Helmet>
+      <div className=' 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative'>
+                    <div className=' flex flex-col gap-2 p-2'>
+                               {/* card 1st */}
+                               <div className='w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start'>
+                                             <div className='w-full flex items-center justify-center gap-2'>
+                                                        <h1 className='text-3xl font-semibold dark:text-zinc-300'><span className='text-2xl font-medium dark:text-zinc-400'>Hye,</span> I'm <a href="https://github.com/Abhay7111">Abhay7111</a></h1>
+                                                        <button onClick={toggleTheme} className='text-sm cursor-pointer font-medium size-8 rounded-md transition-colors absolute top-0 right-0'>
+                                                                      <span className='hidden dark:inline'><i className='ri-sun-line text-xl'></i></span>
+                                                                      <span className='inline dark:hidden'><i className='ri-moon-line text-xl'></i></span>
+                                                        </button>
+                                             </div>
+                                             <p className='text-sm opacity-75 text-center md:text-start dark:text-zinc-300 dark:font-light'>My portfolio highlights my expertise in full-stack web development, where I combine engaging UI/UX design with strong Node.js backend APIs to deliver dynamic, user-focused digital experiences.</p>
+                                             <span className='w-fit flex items-start justify-start lg:'>
+                                                        {plinks.map((items) => (
+                                                                      <span key={items.title}>
+                                                                                 {items.link && <a href={items.link} target='_blank' className='text-xl px-2.5 font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'><i className={items.icon} title={items.title}></i></a>}
+                                                                      </span>
+                                                        ))}
+                                             </span>
+                               </div>
+                               {/* 2nd */}
+                                             <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span className='dark:text-zinc-300'>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
+                                                        {infoopen && <div className='max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
+                                                                                 <span className='flex items-center justify-start gap-2'>
+                                                                                               <p className='text-sm font-light lowercase'>true</p>
+                                                                                               <div className='size-2 bg-green-400 rounded-full'></div>
+                                                                                               <p className='text-sm font-light lowercase'>false</p>
+                                                                                               <div className='size-2 bg-red-400 rounded-full'></div>
+                                                                                 </span>
+                                                                                               <p className='flex items-center gap-1.5 mt-1'>
+                                                                                               <div className='size-2 bg-yellow-400 rounded-full'></div>
+                                                                                               <p className='text-xs font-normal'>unvaluable</p>
+                                                                                               </p>
+                                                                                 <div className='flex flex-col items-start gap-1 lowercase text-sm font-light mt-2'>
+                                                                                               <p className='text-nowrap'>1. frontend</p>
+                                                                                               <p className='text-nowrap'>2. backend</p>
+                                                                                               <p className='text-nowrap pb-2'>3. full-stack</p>
+                                                                                 </div>
+                                                                      </div>}
+                                             </span></h1>
+                                             <div className='w-full flex flex-wrap -mt-2 mb-3'><h3 className='text-sm font-'>Number of projects : <span className='text-sm font-bold'>{data.length}</span></h3></div>
+
+                               {loopdata.map(Projects)}
+
+                               {/* More projects button */}
+                               <div className='w-full h-fit flex items-center justify-center'>
+                                             <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>More projects <i className='ri-arrow-drop-down-line'></i></button>
+                               </div>
+
+                               {/* Still Learning */}
+                               <div className='w-full min-h-20'>
+                                             {learning.length > 0 && <h1 className='py-4 text-2xl font-semibold'>Learning </h1>}
+                                             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2'>
+                                                        {learning.map(learn_now)}
+                                             </div>
+                               </div>
+
+                               {Certificates_data.length > 0 &&<h1 className='text-2xl font-semibold'>Certifications </h1>}
+                               <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2'>
+                                             {Certificates_data.map(Certificates)}
+                               </div>
+
+                               {/* clints */}
+                               <div className='w-full h-fit mb-2'>
+                                             {/* <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1> */}
+                                             <div className='w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap'>
+                                                        {Clints.map((items, index) => (
+                                                                      <div key={index} className='w-full h-full bg-gradient-to-tl bg-zinc-100 dark:bg-zinc-800 rounded-md border border-zinc-300 dark:border-zinc-700'>
+                                                                                 <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
+                                                                                               <h1 className='text-xl  dark:text-zinc-200 font-medium w-full flex flex-col items-start justify-center gap-1'><span>{items.compname}</span> <span className='text-xs font-medium opacity-50'>{items.start_date} - {items.end_date}</span></h1>
+                                                                                               <p className='line-clamp-5 tracking-wider first-letter:uppercase lowercase text-sm font-light opacity-80 dark:text-zinc-400'>{items.discription}</p>
+                                                                                               <div className='w-full flex items-center justify-start gap-1'>
+                                                                                               {items.happy ? <span className='text-lg font-medium'><i className="ri-emotion-happy-line text-green-500"></i></span> : <span><i className="ri-emotion-unhappy-line text-red-500"></i></span>}
+                                                                                               <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-600 dark:text-shadow-blue-600 transition-all duration-300 dark:text-blue-400'><i className="ri-link text-xl"></i></a>
+                                                                                               </div>
+                                                                                 </div>
+                                                                      </div>
+                                                        ))}
+                                             </div>
+                               </div>
+
+                               {/* Tools */}
+                               <div className='w-full h-fit'>
+                                             <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
+                                             <div className='w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-2'>
+                                                        {toolslogo.map((items) => (
+                                                                      <div key={items.name} title={items.name} className='flex flex-col items-center justify-center gap-2'>
+                                                                                 <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover bg-zinc-50 p-1' />
+                                                                                 <p className='text-sm'>{items.name}</p>
+                                                                      </div>
+                                                        ))}
+                                             </div>
+                               </div>
+
+                               {/* <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm flex items-center justify-center'>Extra Information <i className={` text-xl ${!openExtra ? 'ri-arrow-drop-down-fill' : 'ri-arrow-drop-up-fill'}`}></i></span></div> */}
+
+                               {/* Extra */}
+                               {/* {<div className={`w-full ${openExtra ? 'h-40' : 'h-0'} overflow-hidden transition-all duration-300 mt-5 flex items-center justify-center`}>
+                                             <img 
+                                             src={`https://camo.githubusercontent.com/82a9ec9693ac5c3cdb091abbc09e474c744d1989784b9095e51aa460bab44549/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d616268617937313131266c61796f75743d636f6d70616374`}
+                                             className='w-fit object-cover' />
+                               </div>} */}
                     </div>
-                    <p className='text-sm opacity-75 text-center md:text-start dark:text-zinc-300 dark:font-light'>My portfolio highlights my expertise in full-stack web development, where I combine engaging UI/UX design with strong Node.js backend APIs to deliver dynamic, user-focused digital experiences.</p>
-                    <span className='w-fit flex items-start justify-start lg:'>
-                         {plinks.map((items) => (
-                              <span>
-                                   {items.link && <a href={items.link} target='_blank' className='text-xl px-2.5 font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'><i className={items.icon} title={items.title}></i></a>}
-                              </span>
-                         ))}
-                         
-                    </span>
-               </div>
-               {/* 2nd */}
-                    <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span className='dark:text-zinc-300'>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
-                         {infoopen && <div className='max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
-                                   <span className='flex items-center justify-start gap-2'>
-                                        <p className='text-sm font-light lowercase'>true</p>
-                                        <div className='size-2 bg-green-400 rounded-full'></div>
-                                        <p className='text-sm font-light lowercase'>false</p>
-                                        <div className='size-2 bg-red-400 rounded-full'></div>
-                                   </span>
-                                        <p className='flex items-center gap-1.5 mt-1'>
-                                        <div className='size-2 bg-yellow-400 rounded-full'></div>
-                                        <p className='text-xs font-normal'>unvaluable</p>
-                                        </p>
-                                   <div className='flex flex-col items-start gap-1 lowercase text-sm font-light mt-2'>
-                                        <p className='text-nowrap'>1. frontend</p>
-                                        <p className='text-nowrap'>2. backend</p>
-                                        <p className='text-nowrap pb-2'>3. full-stack</p>
-                                   </div>
-                              </div>}
-                    </span></h1>
-                    <div className='w-full flex flex-wrap'><h3 className='text-sm font-light'>Number of projects : <span className='text-sm font-medium'>{data.length}</span></h3></div>
-
-               {loopdata.map(Projects)}
-
-               {/* More projects button */}
-               <div className='w-full h-fit flex items-center justify-center'>
-                    <button onClick={()=>setadddatalength(prev => prev === 0 ? 1 : prev * 2 )} className='text-sm font-medium py-1 bg-transparent hover:bg-zinc-200 cursor-pointer px-2 rounded-md border border-zinc-400 hover:border-zinc-300 dark:hover:text-zinc-800 active:scale-[0.97] transition-all'>More projects <i className='ri-arrow-drop-down-line'></i></button>
-               </div>
-
-               {/* Still Learning */}
-               <div className='w-full min-h-20'>
-                    <h1 className='py-4 text-2xl font-semibold'>Learning :</h1>
-                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2'>
-                         {learning.map(learn_now)}
-                    </div>
-               </div>
-
-               <h1 className='text-2xl font-semibold'>Certifications </h1>
-               <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2'>
-                    {Certificates_data.map(Certificates)}
-               </div>
-
-               {/* clints */}
-               <div className='w-full h-fit mb-2'>
-                    {/* <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1> */}
-                    <div className='w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap'>
-                         {Clints.map((items, index) => (
-                              <div className='w-full h-full bg-gradient-to-tl bg-zinc-100 dark:bg-zinc-800 rounded-md border border-zinc-300 dark:border-zinc-700'>
-                                   <div className='w-full h-full flex flex-col items-start justify-start p-2 gap-2'>
-                                        <h1 className='text-xl  dark:text-zinc-200 font-medium w-full flex flex-col items-start justify-center gap-1'><span>{items.compname}</span> <span className='text-xs font-medium opacity-50'>{items.start_date} - {items.end_date}</span></h1>
-                                        <p className='line-clamp-5 tracking-wider first-letter:uppercase lowercase text-sm font-light opacity-80 dark:text-zinc-400'>{items.discription}</p>
-                                        <div className='w-full flex items-center justify-start gap-1'>
-                                        {items.happy ? <span className='text-lg font-medium'><i class="ri-emotion-happy-line text-green-500"></i></span> : <span><i class="ri-emotion-unhappy-line text-red-500"></i></span>}
-                                        <a href={items.websitelink} target='_blank' className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-600 dark:text-shadow-blue-600 transition-all duration-300 dark:text-blue-400'><i class="ri-link text-xl"></i></a>
-                                        </div>
-                                   </div>
-                              </div>
-                         ))}
-                    </div>
-               </div>
-
-               {/* Tools */}
-               <div className='w-full h-fit'>
-                    <h1 className='text-xl font-semibold uppercase mb-2 p-2'>All learned tools</h1>
-                    <div className='w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-2'>
-                         {toolslogo.map((items) => (
-                              <div title={items.name} className='flex flex-col items-center justify-center gap-2'>
-                                   <img src={items.img} alt="404" className='h-10 w-fit rounded-md object-cover bg-zinc-50 p-1' />
-                                   <p className='text-sm'>{items.name}</p>
-                              </div>
-                         ))}
-                    </div>
-               </div>
-
-               <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm flex items-center justify-center'>Extra Information <i class={` text-xl ${!openExtra ? 'ri-arrow-drop-down-fill' : 'ri-arrow-drop-up-fill'}`}></i></span></div>
-
-               {/* Extra */}
-               {<div className={`w-full ${openExtra ? 'h-40' : 'h-0'} overflow-hidden transition-all duration-300 mt-5 flex items-center justify-center`}>
-                    <img 
-                    src={`https://camo.githubusercontent.com/82a9ec9693ac5c3cdb091abbc09e474c744d1989784b9095e51aa460bab44549/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d616268617937313131266c61796f75743d636f6d70616374`}
-                    className='w-fit object-cover' />
-               </div>}
-          </div>
+      </div>
      </div>
-    </div>
-  )
+)
 }
 
 export default home
