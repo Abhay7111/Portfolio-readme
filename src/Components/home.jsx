@@ -319,11 +319,18 @@ function home() {
      ]
      const learning = [
           {
+               subject:'Backend Development',
+               class:'Complete Backend One Shot | Biginner to Advanced',
+               class_from:'Sheryians Coding School',
+               start_date:'20 | feb | 2026',
+               end_date:'🟢 Ongoing', 
+          },
+          {
                subject:'TypeScript',
                class:'TypeScript Domination - Full Course',
                class_from:'Sheryians Coding School',
                start_date:'03 | oct | 2025',
-               end_date:'✔️ Completed',
+               end_date:'10 | oct | 2025', 
           },
      ]
      const Certificates_data = [
@@ -337,11 +344,10 @@ function home() {
           //      Certificate_description:'',
           // },
      ]
-
+     
      const [infoopen, setinfoopen] = useState(null);
      const [adddatalength, setadddatalength] = useState(6);
      const loopdata = data.slice(0, + adddatalength);
-
 
      // Projects function
      function Projects(items){
@@ -398,6 +404,7 @@ function home() {
           )
      }
 
+     // Learnning function
      function learn_now(items) {
           return (
                <div className='w-full h-full p-1 rounded-md'>
@@ -430,7 +437,7 @@ return (
       <Helmet>
                     <title>Abhay Vishwakarma | Full Stack Web Developer Portfolio | Abhay7111</title>
                     <meta name="description" content="Explore the professional portfolio of Abhay Vishwakarma (Abhay7111), a Full Stack Web Developer specializing in UI/UX, Node.js, React, and modern web technologies. View projects, resume, and contact information." />
-                    <meta name="keywords" content="Abhay Vishwakarma, Abhay7111, Full Stack Developer, Web Developer, UI/UX Designer, Node.js, React, JavaScript, Portfolio, Resume, Projects, Backend, Frontend, MERN, MongoDB, Express, Google SEO, Software Engineer, India, Hire Developer" />
+                    <meta name="keywords" content="Abhay Vishwakarma, Abhay7111, Full Stack Developer, Web Developer, UI/UX Designer, abhay7111 UI/UX Designer, Node.js, React, JavaScript, Portfolio, Resume, Projects, Backend, Frontend, MERN, MongoDB, Express, Google SEO, Software Engineer, India, Hire Developer" />
                     <meta name="author" content="Abhay Vishwakarma" />
                     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
