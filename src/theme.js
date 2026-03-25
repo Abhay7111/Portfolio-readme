@@ -1,12 +1,13 @@
 export function initTheme() {
+  let stored = null;
   try {
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = stored || (prefersDark ? 'dark' : 'light');
-    applyTheme(theme);
-  } catch (_) {
-    applyTheme('light');
+    stored = localStorage.getItem('theme');
+  } catch {
+    // localStorage may not be available
   }
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored || (prefersDark ? 'dark' : 'light');
+  applyTheme(theme);
 }
 
 export function toggleTheme() {
@@ -15,18 +16,14 @@ export function toggleTheme() {
   applyTheme(next);
   try {
     localStorage.setItem('theme', next);
-  } catch (_) {
+  } catch {
     // ignore
   }
   return next;
 }
 
 export function applyTheme(theme) {
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
+  document.documentElement.classList.toggle('dark', theme === 'dark');
 }
 
 
