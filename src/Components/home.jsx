@@ -319,6 +319,13 @@ function home() {
      ]
      const learning = [
           {
+               subject:'2.0 job ready AI powered Cohort',
+               class:'',
+               class_from:'Sheryians Coding School',
+               start_date:'21 | mar | 2026',
+               end_date:'🟢 Ongoing',
+          },
+          {
                subject:'Backend Development',
                class:'Complete Backend One Shot | Biginner to Advanced',
                class_from:'Sheryians Coding School',
