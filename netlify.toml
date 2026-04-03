@@ -11,3 +11,7 @@ from = "/*"
 to = "/index.html"
 status = 200
 conditions = {Language = "en"}
+
+[plugins]
+# Disable unnecessary extensions
+
