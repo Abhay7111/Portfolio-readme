@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { toggleTheme } from '../theme';
-import { Helmet } from 'react-helmet';
-import { GetData } from './Data/Project.data';    
+import { Helmet } from 'react-helmet';    
 
-function home() {
-
-     const [openExtra, setopenExtra] = useState();
-     const [openCertificate, setopenCertificate ] = useState();
-     const { Data, Loading, Error } = GetData();
+function Home() {
 
      const data = [
           {
@@ -428,7 +423,7 @@ function home() {
      function Certificates (items) {
           return(
                <div key={items._id} className='w-full h-full rounded-xl overflow-hidden  p-2 bg-zinc-100'>
-                    <img onClick={() => setopenCertificate(true)} src={items.Certificate} className='w-full h-36 rounded-[4px] cursor-pointer ' />
+                    <img src={items.Certificate} className='w-full h-36 rounded-[4px] cursor-pointer ' />
                     <div className='w-full flex items-center justify-between gap-2'>
                          <h1 className='text-base font-semibold py-2'>{items.Certificate_name}</h1>
                          <p className='text-xs font-medium'>{items.Certificate_date}</p>
@@ -568,4 +563,4 @@ return (
 )
 }
 
-export default home
+export default Home
