@@ -352,63 +352,63 @@ function Home() {
      
      const [infoopen, setinfoopen] = useState(null);
      const [adddatalength, setadddatalength] = useState(6);
-     const loopdata = data.slice(0, + adddatalength);
      const {Data, Loading, Error } = GetData();
+     const loopdata = Data.slice(0, + adddatalength);
 
      // Projects function
-     function Projects(items){
-          return (
-               <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
-               <div className='flex items-center justify-between'>
-                    <h1 className='text-xl font-medium flex items-center gap-2'>
-                         <span className='dark:text-zinc-100'>{items.title}</span>
-                         <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
-                              <p
-                                   className={`${
-                                        items.frontend === 1
-                                             ? 'bg-green-400'
-                                             : items.frontend === 0
-                                             ? 'bg-red-400'
-                                             : 'bg-gray-400'
-                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-                                   title="Frontend"
-                              ></p>
-                              <p
-                                   className={`${
-                                        items.backend === 1
-                                             ? 'bg-green-400'
-                                             : items.backend === 0
-                                             ? 'bg-red-400'
-                                             : items.backend === 2
-                                             ? 'bg-yellow-400'
-                                             : 'bg-blue-400' 
-                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-                                   title="Backend"
-                              ></p>
-                              <p
-                                   className={`${
-                                        items.fullstack === 1
-                                             ? 'bg-green-400'
-                                             : items.fullstack === 0
-                                             ? 'bg-red-400'
-                                             : 'bg-gray-400'
-                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-                                   title="Fullstack"
-                              ></p>
-                              {/* Legend: Green = true, Red = false, Gray = inactive */}
-                         </span>
-                    </h1>
-                    <span className='flex items-center gap-3 pr-5'>
-                         {items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.repo === 'private' ? 'private' : 'Repo'} <i className="ri-git-repository-line"></i></a>}
-                         {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
-                    </span>
-               </div>
-               <p className='text-sm opacity-75 dark:text-zinc-200 dark:font-light'>{items.discription}</p>
-               <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
-               <span className='text-xs dark:text-zinc-500'>{items.date}</span>
-          </div>
-          )
-     }
+     // function Projects(items){
+     //      return (
+     //           <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
+     //           <div className='flex items-center justify-between'>
+     //                <h1 className='text-xl font-medium flex items-center gap-2'>
+     //                     <span className='dark:text-zinc-100'>{items.title}</span>
+     //                     <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
+     //                          <p
+     //                               className={`${
+     //                                    items.frontend === 1
+     //                                         ? 'bg-green-400'
+     //                                         : items.frontend === 0
+     //                                         ? 'bg-red-400'
+     //                                         : 'bg-gray-400'
+     //                               } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
+     //                               title="Frontend"
+     //                          ></p>
+     //                          <p
+     //                               className={`${
+     //                                    items.backend === 1
+     //                                         ? 'bg-green-400'
+     //                                         : items.backend === 0
+     //                                         ? 'bg-red-400'
+     //                                         : items.backend === 2
+     //                                         ? 'bg-yellow-400'
+     //                                         : 'bg-blue-400' 
+     //                               } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
+     //                               title="Backend"
+     //                          ></p>
+     //                          <p
+     //                               className={`${
+     //                                    items.fullstack === 1
+     //                                         ? 'bg-green-400'
+     //                                         : items.fullstack === 0
+     //                                         ? 'bg-red-400'
+     //                                         : 'bg-gray-400'
+     //                               } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
+     //                               title="Fullstack"
+     //                          ></p>
+     //                          {/* Legend: Green = true, Red = false, Gray = inactive */}
+     //                     </span>
+     //                </h1>
+     //                <span className='flex items-center gap-3 pr-5'>
+     //                     {items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.repo === 'private' ? 'private' : 'Repo'} <i className="ri-git-repository-line"></i></a>}
+     //                     {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
+     //                </span>
+     //           </div>
+     //           <p className='text-sm opacity-75 dark:text-zinc-200 dark:font-light'>{items.discription}</p>
+     //           <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
+     //           <span className='text-xs dark:text-zinc-500'>{items.date}</span>
+     //      </div>
+     //      )
+     // }
 
 
      // Projects function from API
@@ -418,38 +418,19 @@ function Home() {
                <div className='flex items-center justify-between'>
                     <h1 className='text-xl font-medium flex items-center gap-2'>
                          <span className='dark:text-zinc-100'>{items.title}</span>
-                         <span title={items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
+                         <span className='flex items-center gap-1 ml-2'>
                               <p
                                    className={`${
-                                        items.frontend === 1 && items.backend === 1
+                                        (items.frontend && items.backend)
                                              ? 'bg-green-400'
-                                             : items.frontend === 1 && items.backend !== 1
+                                             : (items.backend && !items.frontend)
+                                             ? 'bg-red-400'
+                                             : (items.frontend && !items.backend)
                                              ? 'bg-yellow-400'
                                              : 'bg-gray-400'
                                    } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-                                   title="Frontend"
+                                   title={items.frontend && items.backend ? "Full Stack" : items.backend ? "Backend Only" : items.frontend ? "Frontend Only" : "Inactive"}
                               ></p>
-                              <p
-                                   className={`${
-                                        items.frontend === 1 && items.backend === 1
-                                             ? 'bg-green-400'
-                                             : items.backend === 1 && items.frontend !== 1
-                                             ? 'bg-red-400'
-                                             : 'bg-gray-400'
-                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-                                   title="Backend"                              ></p>
-                              <p
-                                   className={`${
-                                        items.fullstack === 1
-                                             ? 'bg-green-400'
-                                             : items.fullstack === 0
-                                             ? 'bg-red-400'
-                                             : 'bg-gray-400'
-                                   } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-                                   title="Fullstack"
-
-                              ></p>
-                              {/* Legend: Green = true, Red = false, Gray = inactive */}
                          </span>
                     </h1>
                     <span className='flex items-center gap-3 pr-5'>
@@ -534,27 +515,26 @@ return (
                                {/* 2nd */}
                                              <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span className='dark:text-zinc-300'>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
                                                         {infoopen && <div className='max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
-                                                                                 <span className='flex items-center justify-start gap-2'>
-                                                                                               <p className='text-sm font-light lowercase'>true</p>
-                                                                                               <div className='size-2 bg-green-400 rounded-full'></div>
-                                                                                               <p className='text-sm font-light lowercase'>false</p>
-                                                                                               <div className='size-2 bg-red-400 rounded-full'></div>
+                                                                                 <span className='flex flexco items-center justify-start gap-2'>
+                                                                                               <div className='flex gap-2 items-center justify-start'>
+                                                                                                    <div className='size-2 bg-green-400 rounded-full'></div>
+                                                                                                    <p className='text-sm font-light lowercase text-nowrap'>full-stack</p>
+                                                                                               </div>
+                                                                                               <div className='flex gap-2 items-center justify-start'>
+                                                                                                    <div className='size-2 bg-red-400 rounded-full'></div>
+                                                                                                    <p className='text-sm font-light lowercase'>backend</p>
+                                                                                               </div>
+                                                                                               <div className='flex gap-2 items-center justify-start'>
+                                                                                                    <div className='size-2 bg-yellow-400 rounded-full'></div>
+                                                                                                    <p className='text-xs font-normal'>frontend</p>
+                                                                                               </div>
                                                                                  </span>
-                                                                                               <p className='flex items-center gap-1.5 mt-1'>
-                                                                                               <div className='size-2 bg-yellow-400 rounded-full'></div>
-                                                                                               <p className='text-xs font-normal'>unvaluable</p>
-                                                                                               </p>
-                                                                                 <div className='flex flex-col items-start gap-1 lowercase text-sm font-light mt-2'>
-                                                                                               <p className='text-nowrap'>1. frontend</p>
-                                                                                               <p className='text-nowrap'>2. backend</p>
-                                                                                               <p className='text-nowrap pb-2'>3. full-stack</p>
-                                                                                 </div>
                                                                       </div>}
                                              </span></h1>
                                              <div className='w-full flex flex-wrap -mt-2 mb-3'><h3 className='text-sm font-'>Number of projects : <span className='text-sm font-bold'>{data.length}</span></h3></div>
 
                                {/* {loopdata.map(Projects)} */}
-                               {Loading ? <p>Loading...</p> : <>{Data.map(Projects_api)}</>}
+                               {Loading ? <p className='text-center py-8 text-zinc-500'>Loading projects...</p> : Error ? <p className='text-center py-8 text-red-500'>❌ Failed to load projects. Please check your internet connection and refresh the page.</p> : loopdata.length > 0 ? <>{loopdata.map(Projects_api)}</> : <p className='text-center py-8 text-zinc-500'>No projects found</p>}
 
                                {/* More projects button */}
                                <div className='w-full h-fit flex items-center justify-center'>
