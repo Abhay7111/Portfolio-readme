@@ -4,6 +4,7 @@ publish = "dist"
 
 [build.environment]
 NODE_VERSION = "20"
+VITE_API_URL = "https://server-01-v2cx.onrender.com/portfolio/"
 
 [[redirects]]
 from = "/*"
