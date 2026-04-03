@@ -515,7 +515,7 @@ return (
                                {/* 2nd */}
                                              <h1 className='text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between'><span className='dark:text-zinc-300'>Projects</span> <span className='relative'><i onClick={() => setinfoopen ((prev) => !prev)} className='ri-information-line text-lg font-light cursor-pointer'></i>
                                                         {infoopen && <div className='max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1'>
-                                                                                 <span className='flex flexco items-center justify-start gap-2'>
+                                                                                 <span className='flex flex-col items-center justify-start gap-2'>
                                                                                                <div className='flex gap-2 items-center justify-start'>
                                                                                                     <div className='size-2 bg-green-400 rounded-full'></div>
                                                                                                     <p className='text-sm font-light lowercase text-nowrap'>full-stack</p>
