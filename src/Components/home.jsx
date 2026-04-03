@@ -362,7 +362,6 @@ function home() {
      function Projects(items){
           return (
                <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
-                    <div>{Data.length}</div>
                <div className='flex items-center justify-between'>
                     <h1 className='text-xl font-medium flex items-center gap-2'>
                          <span className='dark:text-zinc-100'>{items.title}</span>
