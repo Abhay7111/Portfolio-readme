@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const GetData = () => {
-  const Api = "https://server-01-v2cx.onrender.com/portfolio/";
+  const Api = import.meta.env.VITE_API_URL;
   const [Data, setData] = useState([]);
   const [Loading, setLoading] = useState(true);
   const [Error, setError] = useState(null);

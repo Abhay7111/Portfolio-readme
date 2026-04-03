@@ -8,8 +8,11 @@ yarn-error.log*
 dist/
 build/
 
-# Misc
+# Environment variables
 .env
 .env.local
 .env.*.local
+
+# Misc
 .DS_Store
+
