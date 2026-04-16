@@ -459,7 +459,7 @@ function Home() {
     return (
       <div className="w-full h-full p-1 rounded-md">
         <h1 className="text-base font-semibold">{items.title}</h1>
-        <p className="text-sm opacity-90 py-1">{items.class}</p>
+        <p className="text-sm opacity-90 py-1">{items.description}</p>
         <p className="text-xs font-medium opacity-60">{items.source}</p>
         <i className="text-xs font-light opacity-60 flex flex-nowrap gap-1.5">
           <p className="text-nowrap">{items.statdate}</p> <span className="font-bold"> - </span>  
