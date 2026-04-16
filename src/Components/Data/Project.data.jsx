@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const GetData = () => {
-  const Api = import.meta.env.VITE_API_URL_PROJECT;
+  const Api = "https://server-01-v2cx.onrender.com/portfolio";
   const [Data, setData] = useState([]);
   const [Loading, setLoading] = useState(true);
   const [Error, setError] = useState(null);
@@ -36,7 +36,7 @@ const GetData = () => {
 };
 
 const GetLearningData = () => {
-  const Api = import.meta.env.VITE_API_URL_LEARNING;
+  const Api = "https://server-01-v2cx.onrender.com/portfoliolearning";
   const [LearningData, setData] = useState([]);
   const [LearningLoading, setLoading] = useState(true);
   const [LearningError, setError] = useState(null);
