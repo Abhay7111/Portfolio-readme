@@ -4,174 +4,6 @@ import { Helmet } from "react-helmet";
 import { GetData, GetLearningData } from "./Data/Project.data";
 
 function Home() {
-  const data = [
-    {
-      title: "Voice Assistant",
-      discription:
-        "I developed a voice assistant web application using React.js and Tailwind CSS for the frontend, and Node.js with Express.js for backend services. The app integrates various APIs. So users can teach it for new commands and new data.",
-      links: "https://abhay7111-voice-assistant.netlify.app/",
-      repo: "",
-      tech: [
-        "React js",
-        "Tailwind CSS",
-        "Remix icon",
-        "React Router",
-        "React Markdown",
-        "APIs",
-        "Node.js",
-        "Express.js",
-        "etc.",
-      ],
-      date: "Oct 15, 2025",
-      fullstack: 1,
-      backend: 1,
-      frontend: 1,
-    },
-    {
-      title: "Course",
-      discription:
-        "I Created a responsive course website using React.js and Tailwind CSS. The site features a clean design, UI looks professional, like dashboard, easy navigation, and showcases of course offerings effectively.",
-      links: "https://abhay7111-courses.netlify.app/",
-      repo: "",
-      tech: [
-        "React js",
-        "Tailwind CSS",
-        "Remix icon",
-        "React Router",
-        "React Markdown",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "APIs",
-        "etc.",
-      ],
-      date: "Dec 14, 2025",
-      fullstack: 1,
-      backend: 1,
-      frontend: 1,
-    },
-    {
-      title: "Blog",
-      discription:
-        "I developed a dynamic blog website, designed to provide a seamless platform for publishing engaging content and offering an intuitive reading experience for users.",
-      links: "https://separatedigital.netlify.app/Blog",
-      repo: "",
-      tech: [
-        "React js",
-        "Tailwind CSS",
-        "Remix icon",
-        "Node js",
-        "Express js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "etc.",
-      ],
-      date: "Jul 16, 2024",
-      fullstack: 1,
-      backend: 1,
-      frontend: 1,
-    },
-    {
-      title: "Minefood",
-      discription:
-        "I designed and developed this comprehensive website for Minefood. The platform showcases their unique menu and inviting ambiance, enhancing their online presence and connecting them with a wider audience.",
-      links: "https://minefood.netlify.app/",
-      repo: "",
-      tech: [
-        "React js",
-        "HTML",
-        "Tailwind CSS",
-        "Remix icon",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "etc.",
-      ],
-      date: "Nov 13, 2024",
-      fullstack: 1,
-      backend: 1,
-      frontend: 1,
-    },
-    {
-      title: "Prasa",
-      discription:
-        "I created a jewellery website with a clean, elegant design that beautifully showcases collections. The site is fully responsive, user-friendly, and highlights the brand’s identity while providing smooth navigation and a professional online presence.",
-      links: "https://prasa-ruddy.vercel.app/",
-      repo: "https://github.com/Abhay7111/prasa",
-      tech: ["React js", "Tailwind CSS", "Remix icon", "etc."],
-      date: "Sep 24, 2024",
-      fullstack: 0,
-      backend: 0,
-      frontend: 1,
-    },
-    {
-      title: "Ochi clone",
-      discription:
-        "I cloned the Ochi website, focusing on pixel-perfect design, smooth animations, and responsive layouts. This project highlights my expertise in front-end development, modern UI/UX, and performance optimization",
-      links: "https://abhay7111.netlify.app/",
-      repo: "https://github.com/abhay7111/reactlive",
-      tech: [
-        "React js",
-        "JavaScript",
-        "framer-motion",
-        "locomotive-scroll",
-        "etc.",
-      ],
-      date: "Mar 12, 2024",
-      frontend: 1,
-      backend: 0,
-      fullstack: 0,
-    },
-    {
-      title: "Linlin kettle",
-      discription:
-        'I build a website called Linlin, I recreated this website for show case of "Linlin kettles"',
-      links: "https://abhay7111-linlin.netlify.app/",
-      repo: "https://github.com/abhay7111/linlin/",
-      tech: ["React js", "JavaScript", "Tailwind CSS", "Remix icon", "etc."],
-      date: "Sep 16, 2025",
-      fullstack: 0,
-      backend: 0,
-      frontend: 1,
-    },
-    {
-      title: "Github clone",
-      discription:
-        "I built the user interface and experience for GitHub clone, meticulously replicating its design and interactive elements. This project showcases my skills in creating responsive, component-driven web applications that provide an intuitive user experience.",
-      links: "https://abhay7111github.netlify.app/",
-      repo: "",
-      tech: ["React js", "HTML", "Tailwind CSS", "Remix icon", "etc."],
-      date: "Mar 12, 2024",
-      fullstack: 0,
-      backend: 0,
-      frontend: 1,
-    },
-    {
-      title: "Spotify Clone",
-      discription:
-        "A Spotify clone built with HTML, CSS, and JavaScript. It allows users to play music. The project showcases a responsive design and includes features and its looks similar to the original Spotify website in terms of layout and functionality.",
-      links: "https://abhay7111.github.io/spotify/",
-      repo: "https://github.com/Abhay7111/spotify",
-      tech: ["JavaScript", "HTML 5", "CSS", "etc."],
-      date: "Dec 1, 2023",
-      fullstack: 0,
-      backend: 0,
-      frontend: 1,
-    },
-    {
-      title: "biz-growth",
-      discription:
-        "I developed the official website for Prachar Expert, a digital growth accelerator specializing in SEO, SMM, and content mastery. The site is designed to effectively showcase their services, empowering them to help clients achieve a strong online presence.",
-      links: "https://biz-growth.netlify.app/",
-      repo: "https://github.com/Abhay7111/gonukkad",
-      tech: ["JavaScript", "HTML 5", "CSS", "etc."],
-      date: "Mar 24, 2024",
-      fullstack: 0,
-      backend: 0,
-      frontend: 1,
-    },
-  ];
   const toolslogo = [
     {
       img: "data:image/png;base64,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",
@@ -180,6 +12,10 @@ function Home() {
     {
       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/960px-Official_CSS_Logo.svg.png",
       name: "CSS",
+    },
+    {
+      img: "https://www.remoterocketship.com/images/blog/SCSS-icon-for-blog.jpg",
+      name: "SCSS",
     },
     {
       img: "data:image/png;base64,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",
@@ -194,7 +30,7 @@ function Home() {
       name: "React js",
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9K8fG9x0f5o4-JYZBzsrKwv9lV_cFgeyxA&s",
+      img: "https://cdn.hashnode.com/res/hashnode/image/upload/v1703155483443/e42a7be2-890a-4bd2-accf-306e53ccebbd.png",
       name: "Node js",
     },
     {
@@ -206,7 +42,7 @@ function Home() {
       name: "Express js",
     },
     {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png",
+      img: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
       name: "C",
     },
     {
@@ -219,10 +55,6 @@ function Home() {
     },
     {
       img: "https://avatars.githubusercontent.com/u/18133?s=200&v=4",
-      name: "Git",
-    },
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/1200px-Netlify_logo_%282%29.svg.png",
       name: "Git",
     },
     {
@@ -240,6 +72,14 @@ function Home() {
     {
       img: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg",
       name: "Type script",
+    },
+    {
+      img: "https://avatars.githubusercontent.com/u/7892489?s=200&v=4",
+      name: "Netlify",
+    },
+    {
+      img: "https://pbs.twimg.com/profile_images/1735434212990169088/WoNsBQOA_400x400.jpg",
+      name: "Onrender",
     },
   ];
   const Clints = [
@@ -294,6 +134,11 @@ function Home() {
       link: "https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451",
       icon: "ri-file-line",
     },
+    {
+      title: "Email",
+      link: "mailto:gaamagaming@gmail.com",
+      icon: "ri-mail-send-line",
+    },
   ];
 //   const learning = [
 //     {
@@ -336,68 +181,13 @@ function Home() {
   const { LearningData, LearningLoading, LearningError } = GetLearningData();
   const loopdata = Data.slice(0, +adddatalength);
 
-  // Projects function
-  // function Projects(items){
-  //      return (
-  //           <div className='w-full h-fit pb-6 p-1 flex flex-col gap-2'>
-  //           <div className='flex items-center justify-between'>
-  //                <h1 className='text-xl font-medium flex items-center gap-2'>
-  //                     <span className='dark:text-zinc-100'>{items.title}</span>
-  //                     <span title={items.fullstack ? "fullstack" : items.backend ? "backend" : items.frontend ? "frontend" : ""} className='flex items-center gap-1 ml-2'>
-  //                          <p
-  //                               className={`${
-  //                                    items.frontend === 1
-  //                                         ? 'bg-green-400'
-  //                                         : items.frontend === 0
-  //                                         ? 'bg-red-400'
-  //                                         : 'bg-gray-400'
-  //                               } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-  //                               title="Frontend"
-  //                          ></p>
-  //                          <p
-  //                               className={`${
-  //                                    items.backend === 1
-  //                                         ? 'bg-green-400'
-  //                                         : items.backend === 0
-  //                                         ? 'bg-red-400'
-  //                                         : items.backend === 2
-  //                                         ? 'bg-yellow-400'
-  //                                         : 'bg-blue-400'
-  //                               } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-  //                               title="Backend"
-  //                          ></p>
-  //                          <p
-  //                               className={`${
-  //                                    items.fullstack === 1
-  //                                         ? 'bg-green-400'
-  //                                         : items.fullstack === 0
-  //                                         ? 'bg-red-400'
-  //                                         : 'bg-gray-400'
-  //                               } size-1.5 rounded-full hover:opacity-60 hover:scale-[1.3]`}
-  //                               title="Fullstack"
-  //                          ></p>
-  //                          {/* Legend: Green = true, Red = false, Gray = inactive */}
-  //                     </span>
-  //                </h1>
-  //                <span className='flex items-center gap-3 pr-5'>
-  //                     {items.repo && <a href={items.repo} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>{items.repo === 'private' ? 'private' : 'Repo'} <i className="ri-git-repository-line"></i></a>}
-  //                     {items.links && <a href={items.links} className='text-sm font-medium opacity-80 hover:text-shadow-sm text-shadow-zinc-400 transition-all duration-300'>View <i className="ri-arrow-right-up-box-line"></i></a>}
-  //                </span>
-  //           </div>
-  //           <p className='text-sm opacity-75 dark:text-zinc-200 dark:font-light'>{items.discription}</p>
-  //           <span className='flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500'>{items.tech.map((tech, i) => (<span key={i}>{tech}</span>))}</span>
-  //           <span className='text-xs dark:text-zinc-500'>{items.date}</span>
-  //      </div>
-  //      )
-  // }
-
   // Projects function from API
   function Projects_api(items) {
     return (
       <div className="w-full h-fit pb-6 p-1 flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-medium flex items-center gap-2">
-            <span className="dark:text-zinc-100">{items.title}</span>
+            <span className="dark:text-zinc-300">{items.title}</span>
             <span className="flex items-center gap-1 ml-2">
               <p
                 className={`${
@@ -441,10 +231,10 @@ function Home() {
             )}
           </span>
         </div>
-        <p className="text-sm opacity-75 dark:text-zinc-200 dark:font-light">
+        <p className="text-sm opacity-75 dark:text-zinc-300 ">
           {items.description}
         </p>
-        <span className="flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:font-light dark:text-zinc-500">
+        <span className="flex items-center gap-x-3 gap-y-1 opacity-85 font-medium flex-wrap text-sm dark:text-zinc-500">
           {items.technologies.map((technologies, i) => (
             <span key={i}>{technologies}</span>
           ))}
@@ -458,10 +248,10 @@ function Home() {
   function learn_now(items) {
     return (
       <div className="w-full h-full p-1 rounded-md">
-        <h1 className="text-base font-semibold">{items.title}</h1>
+        <h1 className="text-lg font-semibold dark:text-zinc-200">{items.title}</h1>
         <p className="text-sm opacity-90 py-1">{items.description}</p>
-        <p className="text-xs font-medium opacity-60">{items.source}</p>
-        <i className="text-xs font-light opacity-60 flex flex-nowrap gap-1.5">
+        <p className={`text-xs font-medium opacity-80 ${items.link == null ? "text-zinc-700 dark:text-zinc-400" : "text-blue-400 hover:text-blue-600"} transition-all`}><a href={items.link}>{items.source}</a></p>
+        <i className="text-xs font-light opacity-60 flex flex-nowrap gap-1.5 dark:text-zinc-500">
           <p className="text-nowrap">{items.statdate}</p> <span className="font-bold"> - </span>  
           <p className=" text-nowrap">{items.enddate}</p>
         </i>
@@ -622,7 +412,7 @@ function Home() {
           <div className="w-full flex flex-wrap -mt-2 mb-3">
             <h3 className="text-sm font-">
               Number of projects :{" "}
-              <span className="text-sm font-bold">{data.length}</span>
+              <span className="text-sm font-bold">{Data.length}</span>
             </h3>
           </div>
 
@@ -657,7 +447,7 @@ function Home() {
           {/* Still Learning */}
           <div className="w-full min-h-20">
             {LearningData.length > 0 && (
-              <h1 className="py-4 text-2xl font-semibold">Learning</h1>
+              <h1 className="py-4 text-2xl font-semibold dark:text-zinc-200">Learning</h1>
             )}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {LearningData.map(learn_now)}
@@ -716,10 +506,10 @@ function Home() {
 
           {/* Tools */}
           <div className="w-full h-fit">
-            <h1 className="text-xl font-semibold uppercase mb-2 p-2">
-              All learned tools
+            <h1 title="All learned tools" className="text-xl font-semibold uppercase mb-2 p-2">
+              All tools
             </h1>
-            <div className="w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-2">
+            <div className="w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-y-5">
               {toolslogo.map((items) => (
                 <div
                   key={items.name}
@@ -729,7 +519,7 @@ function Home() {
                   <img
                     src={items.img}
                     alt="404"
-                    className="h-10 w-fit rounded-md object-cover bg-zinc-50 p-1"
+                    className="h-10 w-fit rounded-md object-cover bg-zinc-50 p-1 filter_img opacity-75 dark:opacity-40"
                   />
                   <p className="text-sm">{items.name}</p>
                 </div>

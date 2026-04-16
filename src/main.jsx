@@ -8,6 +8,8 @@ initTheme()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Home/>
+    <div>
+      <Home/>
+    </div>
   </StrictMode>,
 )

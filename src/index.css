@@ -9,3 +9,7 @@
   font-family: "Poppins", sans-serif;
   font-style: normal;
 }
+
+.filter_img{
+  filter: grayscale(80%);
+}
