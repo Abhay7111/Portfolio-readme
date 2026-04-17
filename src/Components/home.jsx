@@ -527,14 +527,13 @@ function Home() {
             </div>
           </div>
 
-          {/* <div className='w-full flex items-center justify-center'><span onClick={()=>setopenExtra((open) => !open)} className='cursor-pointer px-3 py-1 rounded-md bg-transparent hover:bg-zinc-200 border border-zinc-300 text-zinc-400 hover:text-zinc-700 mt-10 transition-all duration-200 text-sm flex items-center justify-center'>Extra Information <i className={` text-xl ${!openExtra ? 'ri-arrow-drop-down-fill' : 'ri-arrow-drop-up-fill'}`}></i></span></div> */}
-
-          {/* Extra */}
-          {/* {<div className={`w-full ${openExtra ? 'h-40' : 'h-0'} overflow-hidden transition-all duration-300 mt-5 flex items-center justify-center`}>
-                                             <img 
-                                             src={`https://camo.githubusercontent.com/82a9ec9693ac5c3cdb091abbc09e474c744d1989784b9095e51aa460bab44549/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d616268617937313131266c61796f75743d636f6d70616374`}
-                                             className='w-fit object-cover' />
-                               </div>} */}
+          <div className=" w-full h-fit mt-5 bg-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 text-zinc-100 p-20 sm:p-10 flex items-center justify-center rounded-2xl">
+              <div className="flex flex-col gap-2">
+                <p><i className="ri-github-fill"></i> : <a href="https://github.com/abhay7111" target="_blank" className="hover:text-blue-400 transition-all duration-200 font-medium text-lg">Abhay7111</a></p>
+                <p><i className="ri-phone-fill"></i> : <a href="tel:+917408638739" target="_blank" className="hover:text-blue-400 transition-all duration-200 font-medium text-lg">+91-74086-38739</a></p>
+                <p><i className="ri-mail-send-fill"></i> : <a href="mailto:gaamagaming@gmail.com" target="_blank" className="hover:text-blue-400 transition-all duration-200  font-medium text-lg">gaamagaming@gmail.com</a></p>
+              </div>
+          </div>
         </div>
       </div>
     </div>
