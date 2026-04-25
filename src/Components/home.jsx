@@ -335,6 +335,7 @@ function Home() {
         />
       </Helmet>
       <div className=" 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative">
+        <div className="grain"></div>
         <div className=" flex flex-col gap-2 p-2">
           {/* card 1st */}
           <div className="w-full h-fit pb-8 bg-transparent p-1 flex flex-col gap-4 items-center md:items-start">
