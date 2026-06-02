@@ -131,7 +131,7 @@ function Home() {
     },
     {
       title: "Resume",
-      link: "https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451",
+      link: "https://ik.imagekit.io/xpzegfs4i/Resumes/Abhay%20vishwakarma%20Resume.pdf",
       icon: "ri-file-line",
     },
     {
