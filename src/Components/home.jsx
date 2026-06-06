@@ -364,6 +364,7 @@ function Home() {
               Node.js backend APIs to deliver dynamic, user-focused digital
               experiences.
             </p>
+            <p className="text-sm opacity-75"><strong className="text-sm">Achievement:</strong> My SEO-optimized portfolio ranks #1 on Google Search when you search for 'Abhay7111'.</p>
             <div className="w-full flex items-center justify-start gap-5 text-sm">
               <a href="tel:+917408638739" target="_blank" rel="noopener noreferrer" className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"><i class="ri-phone-line"></i>+91-7408638739</a>
               <a href="mailto:gaamagaming@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"><i class="ri-mail-line"></i>gaamagaming@gmail.com</a>
