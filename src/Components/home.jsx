@@ -364,6 +364,10 @@ function Home() {
               Node.js backend APIs to deliver dynamic, user-focused digital
               experiences.
             </p>
+            <div className="w-full flex items-center justify-start gap-5 text-sm">
+              <a href="tel:+917408638739" target="_blank" rel="noopener noreferrer" className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"><i class="ri-phone-line"></i>+91-7408638739</a>
+              <a href="mailto:gaamagaming@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"><i class="ri-mail-line"></i>gaamagaming@gmail.com</a>
+            </div>
             <span className="w-fit flex items-start justify-start lg:">
               {plinks.map((items) => (
                 <span key={items.title}>
@@ -527,14 +531,7 @@ function Home() {
               ))}
             </div>
           </div>
-
-          <div className=" w-full h-fit mt-5 bg-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 text-zinc-100 p-20 sm:p-10 flex items-center justify-center rounded-2xl">
-              <div className="flex flex-col gap-2">
-                <p><i className="ri-github-fill"></i> : <a href="https://github.com/abhay7111" target="_blank" className="hover:text-blue-400 transition-all duration-200 font-medium text-lg">Abhay7111</a></p>
-                <p><i className="ri-phone-fill"></i> : <a href="tel:+917408638739" target="_blank" className="hover:text-blue-400 transition-all duration-200 font-medium text-lg">+91-74086-38739</a></p>
-                <p><i className="ri-mail-send-fill"></i> : <a href="mailto:gaamagaming@gmail.com" target="_blank" className="hover:text-blue-400 transition-all duration-200  font-medium text-lg">gaamagaming@gmail.com</a></p>
-              </div>
-          </div>
+          <i className="text-xs mt-10 font-light ">"Built a fully dynamic MERN portfolio with a custom backend/API integration, allowing real-time content updates without touching the source code."</i>
         </div>
       </div>
     </div>
