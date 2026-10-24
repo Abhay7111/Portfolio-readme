@@ -1,9 +1,60 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toggleTheme } from "../theme";
 import { Helmet } from "react-helmet";
 import { GetData, GetLearningData } from "./Data/Project.data";
+import { mouseHoverController } from "../Controllers/mouse.controller";
 
 function Home() {
+  const hoverMouseRef = useRef(null);
+  const infoPopupRef = useRef(null);
+  const [mouseFollowerEnabled, setMouseFollowerEnabled] = useState(() => {
+    try {
+      return localStorage.getItem("mouseFollowerEnabled") !== "false";
+    } catch {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    if (!mouseFollowerEnabled) {
+      return;
+    }
+
+    const desktopPointer = window.matchMedia(
+      "(min-width: 1025px) and (hover: hover) and (pointer: fine)",
+    );
+    let cleanupMouseFollower = desktopPointer.matches
+      ? mouseHoverController(hoverMouseRef.current)
+      : null;
+
+    function handlePointerCapabilityChange(event) {
+      if (event.matches && cleanupMouseFollower === null) {
+        cleanupMouseFollower = mouseHoverController(hoverMouseRef.current);
+      } else if (!event.matches && cleanupMouseFollower !== null) {
+        cleanupMouseFollower();
+        cleanupMouseFollower = null;
+      }
+    }
+
+    desktopPointer.addEventListener("change", handlePointerCapabilityChange);
+
+    return () => {
+      desktopPointer.removeEventListener("change", handlePointerCapabilityChange);
+      cleanupMouseFollower?.();
+    };
+  }, [mouseFollowerEnabled]);
+
+  function toggleMouseFollower() {
+    const nextEnabled = !mouseFollowerEnabled;
+    setMouseFollowerEnabled(nextEnabled);
+
+    try {
+      localStorage.setItem("mouseFollowerEnabled", String(nextEnabled));
+    } catch {
+      // localStorage may not be available
+    }
+  }
+
   const toolslogo = [
     {
       img: "data:image/png;base64,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",
@@ -140,29 +191,7 @@ function Home() {
       icon: "ri-mail-send-line",
     },
   ];
-//   const learning = [
-//     {
-//       subject: "2.0 job ready AI powered Cohort",
-//       class: "",
-//       class_from: "Sheryians Coding School",
-//       start_date: "21 | mar | 2026",
-//       end_date: "🟢 Ongoing",
-//     },
-//     {
-//       subject: "Backend Development",
-//       class: "Complete Backend One Shot | Biginner to Advanced",
-//       class_from: "Sheryians Coding School",
-//       start_date: "20 | feb | 2026",
-//       end_date: "🟢 Ongoing",
-//     },
-//     {
-//       subject: "TypeScript",
-//       class: "TypeScript Domination - Full Course",
-//       class_from: "Sheryians Coding School",
-//       start_date: "03 | oct | 2025",
-//       end_date: "10 | oct | 2025",
-//     },
-//   ];
+  
   const Certificates_data = [
     // {
     //      _id:'1',
@@ -175,11 +204,26 @@ function Home() {
     // },
   ];
 
-  const [infoopen, setinfoopen] = useState(null);
+  const [infoOpen, setinfoOpen] = useState(null);
   const [adddatalength, setadddatalength] = useState(6);
   const { Data, Loading, Error } = GetData();
   const { LearningData, LearningLoading, LearningError } = GetLearningData();
   const loopdata = Data.slice(0, +adddatalength);
+
+  useEffect(() => {
+    if (!infoOpen) {
+      return;
+    }
+
+    function handleOutsideClick(event) {
+      if (!infoPopupRef.current?.contains(event.target)) {
+        setinfoOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handleOutsideClick);
+    return () => document.removeEventListener("pointerdown", handleOutsideClick);
+  }, [infoOpen]);
 
   // Projects function from API
   function Projects_api(items) {
@@ -334,6 +378,13 @@ function Home() {
           content="https://ik.imagekit.io/xpzegfs4i/Abhay%20vishwakarma%20Resume.pdf?updatedAt=1757361459451"
         />
       </Helmet>
+
+      <div
+        ref={hoverMouseRef}
+        id="hoverMouse"
+        aria-hidden="true"
+        className="fixed left-0 top-0 z-[1000000] hidden h-0 w-0 rounded-full bg-white opacity-0 mix-blend-difference pointer-events-none transition-[width,height,opacity] duration-200 ease-out min-[1025px]:block"
+      ></div>
       <div className=" 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative">
         <div className="grain"></div>
         <div className=" flex flex-col gap-2 p-2">
@@ -388,13 +439,13 @@ function Home() {
           {/* 2nd */}
           <h1 className="text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between">
             <span className="dark:text-zinc-300">Projects</span>{" "}
-            <span className="relative">
+            <span ref={infoPopupRef} className="relative z-[99]">
               <i
-                onClick={() => setinfoopen((prev) => !prev)}
+                onClick={() => setinfoOpen((prev) => !prev)}
                 className="ri-information-line text-lg font-light cursor-pointer"
               ></i>
-              {infoopen && (
-                <div className="max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1">
+              {infoOpen && (
+                <div className="max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1">
                   <span className="flex flex-col items-center justify-start gap-2">
                     <div className="flex gap-2 items-center justify-start">
                       <div className="size-2 bg-green-400 rounded-full"></div>
@@ -403,14 +454,22 @@ function Home() {
                       </p>
                     </div>
                     <div className="flex gap-2 items-center justify-start">
-                      <div className="size-2 bg-red-400 rounded-full"></div>
-                      <p className="text-sm font-light lowercase">backend</p>
-                    </div>
-                    <div className="flex gap-2 items-center justify-start">
                       <div className="size-2 bg-yellow-400 rounded-full"></div>
                       <p className="text-xs font-normal">frontend</p>
                     </div>
+                    <div className="flex gap-2 items-center justify-start">
+                      <div className="size-2 bg-red-400 rounded-full"></div>
+                      <p className="text-sm font-light lowercase">backend</p>
+                    </div>
                   </span>
+                  <button
+                    type="button"
+                    aria-pressed={mouseFollowerEnabled}
+                    onClick={toggleMouseFollower}
+                    className="mt-3 hidden w-full min-w-22 cursor-pointer rounded border border-zinc-300 px-2 py-1 text-left text-xs dark:border-zinc-700 min-[1025px]:block"
+                  >
+                    Mouse: {mouseFollowerEnabled ? "On" : "Off"}
+                  </button>
                 </div>
               )}
             </span>
