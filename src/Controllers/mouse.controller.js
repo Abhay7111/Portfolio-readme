@@ -48,9 +48,9 @@ export function mouseHoverController(element) {
     }
 
     isActive = true;
-    element.style.width = "20px";
-    element.style.height = "20px";
-    element.style.opacity = "1";
+    element.style.width = "15px";
+    element.style.height = "15px";
+    element.style.opacity = "0.8";
 
     if (!hasPosition) {
       currentX = pointerX;

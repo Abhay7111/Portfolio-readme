@@ -39,7 +39,10 @@ function Home() {
     desktopPointer.addEventListener("change", handlePointerCapabilityChange);
 
     return () => {
-      desktopPointer.removeEventListener("change", handlePointerCapabilityChange);
+      desktopPointer.removeEventListener(
+        "change",
+        handlePointerCapabilityChange,
+      );
       cleanupMouseFollower?.();
     };
   }, [mouseFollowerEnabled]);
@@ -191,7 +194,7 @@ function Home() {
       icon: "ri-mail-send-line",
     },
   ];
-  
+
   const Certificates_data = [
     // {
     //      _id:'1',
@@ -222,7 +225,8 @@ function Home() {
     }
 
     document.addEventListener("pointerdown", handleOutsideClick);
-    return () => document.removeEventListener("pointerdown", handleOutsideClick);
+    return () =>
+      document.removeEventListener("pointerdown", handleOutsideClick);
   }, [infoOpen]);
 
   // Projects function from API
@@ -292,11 +296,18 @@ function Home() {
   function learn_now(items) {
     return (
       <div className="w-full h-full p-1 rounded-md">
-        <h1 className="text-lg font-semibold dark:text-zinc-200">{items.title}</h1>
+        <h1 className="text-lg font-semibold dark:text-zinc-200">
+          {items.title}
+        </h1>
         <p className="text-sm opacity-90 py-1">{items.description}</p>
-        <p className={`text-xs font-medium opacity-80 ${items.link == null ? "text-zinc-700 dark:text-zinc-400" : "text-blue-400 hover:text-blue-600"} transition-all`}><a href={items.link}>{items.source}</a></p>
+        <p
+          className={`text-xs font-medium opacity-80 ${items.link == null ? "text-zinc-700 dark:text-zinc-400" : "text-blue-400 hover:text-blue-600"} transition-all`}
+        >
+          <a href={items.link}>{items.source}</a>
+        </p>
         <i className="text-xs font-light opacity-60 flex flex-nowrap gap-1.5 dark:text-zinc-500">
-          <p className="text-nowrap">{items.statdate}</p> <span className="font-bold"> - </span>  
+          <p className="text-nowrap">{items.statdate}</p>{" "}
+          <span className="font-bold"> - </span>
           <p className=" text-nowrap">{items.enddate}</p>
         </i>
       </div>
@@ -383,7 +394,7 @@ function Home() {
         ref={hoverMouseRef}
         id="hoverMouse"
         aria-hidden="true"
-        className="fixed left-0 top-0 z-[1000000] hidden h-0 w-0 rounded-full bg-white opacity-0 mix-blend-difference pointer-events-none transition-[width,height,opacity] duration-200 ease-out min-[1025px]:block"
+        className="fixed left-0 top-0 z-[1000] hidden h-0 w-0 rounded-full bg-white opacity-0 mix-blend-difference pointer-events-none transition-[width,height,opacity] duration-200 ease-out min-[1025px]:block"
       ></div>
       <div className=" 2xl:w-[50%] xl:w-[60%] lg:w-[70%] w-full h-full bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 overflow-auto transition-colors duration-300 relative">
         <div className="grain"></div>
@@ -415,10 +426,28 @@ function Home() {
               Node.js backend APIs to deliver dynamic, user-focused digital
               experiences.
             </p>
-            <p className="text-sm opacity-75"><strong className="text-sm">Achievement:</strong> My SEO-optimized portfolio ranks #1 on Google Search when you search for 'Abhay7111'.</p>
+            <p className="text-sm opacity-75">
+              <strong className="text-sm">Achievement:</strong> My SEO-optimized
+              portfolio ranks #1 on Google Search when you search for
+              'Abhay7111'.
+            </p>
             <div className="w-full flex items-center justify-start gap-5 text-sm">
-              <a href="tel:+917408638739" target="_blank" rel="noopener noreferrer" className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"><i class="ri-phone-line"></i>+91-7408638739</a>
-              <a href="mailto:gaamagaming@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"><i class="ri-mail-line"></i>gaamagaming@gmail.com</a>
+              <a
+                href="tel:+917408638739"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"
+              >
+                <i class="ri-phone-line"></i>+91-7408638739
+              </a>
+              <a
+                href="mailto:gaamagaming@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"
+              >
+                <i class="ri-mail-line"></i>gaamagaming@gmail.com
+              </a>
             </div>
             <span className="w-fit flex items-start justify-start lg:">
               {plinks.map((items) => (
@@ -439,13 +468,15 @@ function Home() {
           {/* 2nd */}
           <h1 className="text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between">
             <span className="dark:text-zinc-300">Projects</span>{" "}
-            <span ref={infoPopupRef} className="relative z-[99]">
+            <span 
+            onClick={() => setinfoOpen((prev) => !prev)}
+            ref={infoPopupRef} className=" scale-[1] relative z-[99] cursor-pointer border-[1px] border-zinc-300 dark:border-zinc-600 w-fit rounded-full px-1 py-0 flex items-center justify-start gap-0.5 hover:bg-zinc-200 dark:hover:bg-zinc-900 transition-all duration-300">
               <i
-                onClick={() => setinfoOpen((prev) => !prev)}
-                className="ri-information-line text-lg font-light cursor-pointer"
+                className="ri-information-line text-sm font-light cursor-pointer dark:text-zinc-300"
               ></i>
+              <span className="text-xs select-none font-normal lowercase dark:text-zinc-300 opacity-95 flex gap-0.5"><span className={` ${infoOpen ? "block" : "hidden"} `}>color </span> info</span>
               {infoOpen && (
-                <div className="max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1">
+                <div className="max-w-60 min-w-fit h-fit z-50 p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 absolute right-0 top-full mt-1">
                   <span className="flex flex-col items-center justify-start gap-2">
                     <div className="flex gap-2 items-center justify-start">
                       <div className="size-2 bg-green-400 rounded-full"></div>
@@ -512,7 +543,9 @@ function Home() {
           {/* Still Learning */}
           <div className="w-full min-h-20">
             {LearningData.length > 0 && (
-              <h1 className="py-4 text-2xl font-semibold dark:text-zinc-200">Learning</h1>
+              <h1 className="py-4 text-2xl font-semibold dark:text-zinc-200">
+                Learning
+              </h1>
             )}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {LearningData.map(learn_now)}
@@ -571,7 +604,10 @@ function Home() {
 
           {/* Tools */}
           <div className="w-full h-fit">
-            <h1 title="All learned tools" className="text-xl font-semibold uppercase mb-2 p-2">
+            <h1
+              title="All learned tools"
+              className="text-xl font-semibold uppercase mb-2 p-2"
+            >
               All tools
             </h1>
             <div className="w-full h-fit grid grid-cols-4 md:grid-cols-8 items-center justify-center gap-y-5">
@@ -591,7 +627,11 @@ function Home() {
               ))}
             </div>
           </div>
-          <i className="text-xs mt-10 font-light ">"Built a fully dynamic MERN portfolio with a custom backend/API integration, allowing real-time content updates without touching the source code."</i>
+          <i className="text-xs mt-10 font-light ">
+            "Built a fully dynamic MERN portfolio with a custom backend/API
+            integration, allowing real-time content updates without touching the
+            source code."
+          </i>
         </div>
       </div>
     </div>
