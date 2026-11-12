@@ -232,7 +232,7 @@ function Home() {
   // Projects function from API
   function Projects_api(items) {
     return (
-      <div className="w-full h-fit pb-6 p-1 flex flex-col gap-2">
+      <div className="ml-5 w-full h-fit pb-6 p-1 flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-medium flex items-center gap-2">
             <span className="dark:text-zinc-300">{items.title}</span>
@@ -345,7 +345,7 @@ function Home() {
     <div className="w-dvw h-dvh bg-white dark:bg-zinc-900 p-2 flex items-start justify-center transition-colors duration-300 relative">
       <Helmet>
         <title>
-          Abhay Vishwakarma | Full Stack Web Developer Portfolio | Abhay7111
+          Abhay Vishwakarma (abhay7111)
         </title>
         <meta
           name="description"
@@ -404,9 +404,9 @@ function Home() {
             <div className="w-full flex items-center justify-center gap-2">
               <h1 className="text-3xl font-semibold dark:text-zinc-300">
                 <span className="text-2xl font-medium dark:text-zinc-400">
-                  Hye,
+                  Hye, I'm 
                 </span>{" "}
-                I'm <a href="https://github.com/Abhay7111">Abhay7111</a>
+                <a href="https://github.com/Abhay7111">Abhay vishwakarma</a>
               </h1>
               <button
                 onClick={toggleTheme}
@@ -420,23 +420,21 @@ function Home() {
                 </span>
               </button>
             </div>
-            <p className="text-sm opacity-75 text-center md:text-start dark:text-zinc-300 dark:font-light">
+            <p className="mt-10 ml-5 text-sm opacity-75 text-center md:text-start dark:text-zinc-300 dark:font-light">
               My portfolio highlights my expertise in full-stack web
               development, where I combine engaging UI/UX design with strong
               Node.js backend APIs to deliver dynamic, user-focused digital
               experiences.
             </p>
-            <p className="text-sm opacity-75">
-              <strong className="text-sm">Achievement:</strong> My SEO-optimized
-              portfolio ranks #1 on Google Search when you search for
-              'Abhay7111'.
+            <p className="text-sm opacity-75 flex flex-col">
+              <strong className="text-sm">Achievement</strong> <span className="mt-2 ml-5">My SEO-optimized portfolio ranks #1 on Google Search when you search for 'Abhay7111'.</span>
             </p>
             <div className="w-full flex items-center justify-start gap-5 text-sm">
               <a
                 href="tel:+917408638739"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"
+                className="ml-4 flex items-center justify-start gap-1.5 hover:text-blue-400 transition-all duration-300"
               >
                 <i class="ri-phone-line"></i>+91-7408638739
               </a>
@@ -449,7 +447,7 @@ function Home() {
                 <i class="ri-mail-line"></i>gaamagaming@gmail.com
               </a>
             </div>
-            <span className="w-fit flex items-start justify-start lg:">
+            <span className="w-fit flex items-start justify-start">
               {plinks.map((items) => (
                 <span key={items.title}>
                   {items.link && (
@@ -466,8 +464,8 @@ function Home() {
             </span>
           </div>
           {/* 2nd */}
-          <h1 className="text-2xl font-semibold uppercase mb-3 w-full flex items-center justify-between">
-            <span className="dark:text-zinc-300">Projects</span>{" "}
+          <h1 className="text-2xl font-semibold mb-3 w-full flex items-center justify-between">
+            <span className="dark:text-zinc-300">Projects <span className="text-lg font-normal">.{Data.length}</span></span>
             <span 
             onClick={() => setinfoOpen((prev) => !prev)}
             ref={infoPopupRef} className=" scale-[1] relative z-[99] cursor-pointer border-[1px] border-zinc-300 dark:border-zinc-600 w-fit rounded-full px-1 py-0 flex items-center justify-start gap-0.5 hover:bg-zinc-200 dark:hover:bg-zinc-900 transition-all duration-300">
@@ -505,12 +503,7 @@ function Home() {
               )}
             </span>
           </h1>
-          <div className="w-full flex flex-wrap -mt-2 mb-3">
-            <h3 className="text-sm font-">
-              Number of projects :{" "}
-              <span className="text-sm font-bold">{Data.length}</span>
-            </h3>
-          </div>
+          
 
           {/* {loopdata.map(Projects)} */}
           {Loading ? (
@@ -547,7 +540,7 @@ function Home() {
                 Learning
               </h1>
             )}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <div className="ml-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {LearningData.map(learn_now)}
             </div>
           </div>
@@ -562,7 +555,7 @@ function Home() {
           {/* clints */}
           <div className="w-full h-fit mb-2">
             {/* <h1 className='text-xl font-semibold uppercase mb-3 p-2'>My happy clints</h1> */}
-            <div className="w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap">
+            <div className=" w-full h-fit grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-3 flex-wrap">
               {Clints.map((items, index) => (
                 <div
                   key={index}
